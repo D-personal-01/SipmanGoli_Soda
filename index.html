@@ -286,6 +286,96 @@
         }
 
         /* Featured Flavors Section with Slider */
+        /* Section */
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+.section-subtitle {
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* Slider container */
+.flavors-slider-container {
+    position: relative;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Slider */
+.flavors-slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px 10px;
+}
+
+/* Card */
+.flavor-card {
+    min-width: 240px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+/* Icon container */
+.flavor-icon {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0 auto 15px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* Image fit fix */
+.flavor-icon img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Text */
+.flavor-name {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+}
+
+.flavor-description {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Arrows */
+.flavor-slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #000;
+    color: #fff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.flavor-arrow-prev { left: -20px; }
+.flavor-arrow-next { right: -20px; }
+
         .flavors-slider-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -871,73 +961,104 @@
     </section>
 
     <!-- Featured Flavors Section -->
-    <section id="flavors" class="section">
-        <h2 class="section-title">Our Flavors</h2>
-        <p class="section-subtitle">Bold tastes that make every moment memorable</p>
-        
-        <div class="flavors-slider-container">
-            <button class="flavor-slider-arrow flavor-arrow-prev" aria-label="Previous flavors">
-                <span>‹</span>
-            </button>
-            
-            <div class="flavors-slider">
-                <div class="flavor-card">
-                    <div class="flavor-icon" style="background: linear-gradient(135deg, #8B4513, #D2691E);"><img src="images/001__1_-removebg-preview.png"></div>
-                    <h3 class="flavor-name">Jeera</h3>
-                    <p class="flavor-description">Traditional cumin-spiced refreshment with an authentic Indian twist.</p>
+<section id="flavors" class="section">
+    <h2 class="section-title">Our Flavors</h2>
+    <p class="section-subtitle">Bold tastes that make every moment memorable</p>
+
+    <div class="flavors-slider-container">
+        <button class="flavor-slider-arrow flavor-arrow-prev" aria-label="Previous flavors">
+            <span>‹</span>
+        </button>
+
+        <div class="flavors-slider">
+
+            <div class="flavor-card">
+                <div class="flavor-icon" style="background: linear-gradient(135deg, #8B4513, #D2691E);">
+                    <img src="images/001__1_-removebg-preview.png" alt="Jeera">
                 </div>
-                <div class="flavor-card">
-                    <div class="flavor-icon" style="background: linear-gradient(135deg, #FFD700, #FFA500);"><img src="images/AADI2095-removebg-preview.png"></div>
-                    <h3 class="flavor-name">Nimbu Pani</h3>
-                    <p class="flavor-description">Classic lemon water reimagined with the perfect balance of tang and fizz.</p>
-                </div>
-                <div class="flavor-card">
-                    <div class="flavor-icon" style="background: linear-gradient(135deg, #98FB98, #FFD700);"><img src="images/AADI2087-removebg-preview.png"></div>
-                    <h3 class="flavor-name">Nimbu Shikanji</h3>
-                    <p class="flavor-description">Sweet and tangy lemonade with a refreshing Indian street-style kick.</p>
-                </div>
-                <div class="flavor-card">
-                    <div class="flavor-icon" style="background: linear-gradient(135deg, #FF8C00, #FFA500);"><img src="images/001-removebg-preview.png"></div>
-                    <h3 class="flavor-name">Orange</h3>
-                    <p class="flavor-description">Bursting with fresh citrus flavor and natural orange essence.</p>
-                </div>
-                <div class="flavor-card">
-                    <div class="flavor-icon" style="background: linear-gradient(135deg, #DC143C, #8B0000);"><img src="images/AADI2042-removebg-preview.png"></div>
-                    <h3 class="flavor-name">Cranberry</h3>
-                    <p class="flavor-description">Tart and sophisticated berry notes with a smooth, refreshing finish.</p>
-                </div>
-                <div class="flavor-card">
-                    <div class="flavor-icon" style="background: linear-gradient(135deg, #4B0082, #8B008B);"><img src="images/AADI2077-removebg-preview.png"></div>
-                    <h3 class="flavor-name">Kalakhatta</h3>
-                    <p class="flavor-description">Dark berry fusion with a mysterious and bold flavor profile.</p>
-                </div>
-                <div class="flavor-card">
-                    <div class="flavor-icon" style="background: linear-gradient(135deg, #9ACD32, #32CD32);"><img src="images/AADI2081-removebg-preview.png"></div>
-                    <h3 class="flavor-name">Kacha Aam</h3>
-                    <p class="flavor-description">Raw mango tanginess that transports you to Indian summer afternoons.</p>
-                </div>
-                <div class="flavor-card">
-                    <div class="flavor-icon" style="background: linear-gradient(135deg, #4169E1, #1E90FF);"><img src="images/01-removebg-preview.png"></div>
-                    <h3 class="flavor-name">Blueberry</h3>
-                    <p class="flavor-description">Sweet and luscious blueberry flavor with a hint of natural berry essence.</p>
-                </div>
-                <div class="flavor-card">
-                    <div class="flavor-icon" style="background: linear-gradient(135deg, #2F1810, #4A2C1F);"><img src="images/AADI2091-removebg-preview.png"></div>
-                    <h3 class="flavor-name">Cola</h3>
-                    <p class="flavor-description">Classic cola taste with our signature bold and refreshing twist.</p>
-                </div>
-                <div class="flavor-card">
-                    <div class="flavor-icon" style="background: linear-gradient(135deg, #FFB6C1, #FF69B4);"><img src=images/AADI2070-removebg-preview.png"></div>
-                    <h3 class="flavor-name">Litchi</h3>
-                    <p class="flavor-description">Exotic litchi sweetness with delicate floral notes and tropical vibes.</p>
-                </div>
+                <h3 class="flavor-name">Jeera</h3>
+                <p class="flavor-description">Traditional cumin-spiced refreshment with an authentic Indian twist.</p>
             </div>
-            
-            <button class="flavor-slider-arrow flavor-arrow-next" aria-label="Next flavors">
-                <span>›</span>
-            </button>
+
+            <div class="flavor-card">
+                <div class="flavor-icon" style="background: linear-gradient(135deg, #FFD700, #FFA500);">
+                    <img src="images/AADI2095-removebg-preview.png" alt="Nimbu Pani">
+                </div>
+                <h3 class="flavor-name">Nimbu Pani</h3>
+                <p class="flavor-description">Classic lemon water reimagined with the perfect balance of tang and fizz.</p>
+            </div>
+
+            <div class="flavor-card">
+                <div class="flavor-icon" style="background: linear-gradient(135deg, #98FB98, #FFD700);">
+                    <img src="images/AADI2087-removebg-preview.png" alt="Nimbu Shikanji">
+                </div>
+                <h3 class="flavor-name">Nimbu Shikanji</h3>
+                <p class="flavor-description">Sweet and tangy lemonade with a refreshing Indian street-style kick.</p>
+            </div>
+
+            <div class="flavor-card">
+                <div class="flavor-icon" style="background: linear-gradient(135deg, #FF8C00, #FFA500);">
+                    <img src="images/001-removebg-preview.png" alt="Orange">
+                </div>
+                <h3 class="flavor-name">Orange</h3>
+                <p class="flavor-description">Bursting with fresh citrus flavor and natural orange essence.</p>
+            </div>
+
+            <div class="flavor-card">
+                <div class="flavor-icon" style="background: linear-gradient(135deg, #DC143C, #8B0000);">
+                    <img src="images/AADI2042-removebg-preview.png" alt="Cranberry">
+                </div>
+                <h3 class="flavor-name">Cranberry</h3>
+                <p class="flavor-description">Tart and sophisticated berry notes with a smooth, refreshing finish.</p>
+            </div>
+
+            <div class="flavor-card">
+                <div class="flavor-icon" style="background: linear-gradient(135deg, #4B0082, #8B008B);">
+                    <img src="images/AADI2077-removebg-preview.png" alt="Kalakhatta">
+                </div>
+                <h3 class="flavor-name">Kalakhatta</h3>
+                <p class="flavor-description">Dark berry fusion with a mysterious and bold flavor profile.</p>
+            </div>
+
+            <div class="flavor-card">
+                <div class="flavor-icon" style="background: linear-gradient(135deg, #9ACD32, #32CD32);">
+                    <img src="images/AADI2081-removebg-preview.png" alt="Kacha Aam">
+                </div>
+                <h3 class="flavor-name">Kacha Aam</h3>
+                <p class="flavor-description">Raw mango tanginess that transports you to Indian summer afternoons.</p>
+            </div>
+
+            <div class="flavor-card">
+                <div class="flavor-icon" style="background: linear-gradient(135deg, #4169E1, #1E90FF);">
+                    <img src="images/01-removebg-preview.png" alt="Blueberry">
+                </div>
+                <h3 class="flavor-name">Blueberry</h3>
+                <p class="flavor-description">Sweet and luscious blueberry flavor with a hint of natural berry essence.</p>
+            </div>
+
+            <div class="flavor-card">
+                <div class="flavor-icon" style="background: linear-gradient(135deg, #2F1810, #4A2C1F);">
+                    <img src="images/AADI2091-removebg-preview.png" alt="Cola">
+                </div>
+                <h3 class="flavor-name">Cola</h3>
+                <p class="flavor-description">Classic cola taste with our signature bold and refreshing twist.</p>
+            </div>
+
+            <div class="flavor-card">
+                <div class="flavor-icon" style="background: linear-gradient(135deg, #FFB6C1, #FF69B4);">
+                    <img src="images/AADI2070-removebg-preview.png" alt="Litchi">
+                </div>
+                <h3 class="flavor-name">Litchi</h3>
+                <p class="flavor-description">Exotic litchi sweetness with delicate floral notes and tropical vibes.</p>
+            </div>
+
         </div>
-    </section>
+
+        <button class="flavor-slider-arrow flavor-arrow-next" aria-label="Next flavors">
+            <span>›</span>
+        </button>
+    </div>
+</section>
 
     <!-- About Section -->
     <section id="about" class="section about-section">
@@ -1156,6 +1277,7 @@
     </script>
 </body>
 </html>
+
 
 
 
