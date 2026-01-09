@@ -33,72 +33,7 @@ body {
     display: block;
 }
 
-/* HAMBURGER ICON */
-.menu-toggle {
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
-    display: none;
-}
-
-/* MOBILE MENU OVERLAY */
-.mobile-menu {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 80%;
-    height: 100vh;
-    background: #2f2f7f; /* similar to image */
-    z-index: 9999;
-    transition: left 0.35s ease;
-    overflow-y: auto;
-}
-
-/* ACTIVE STATE */
-.mobile-menu.active {
-    left: 0;
-}
-
-/* HEADER */
-.mobile-menu-header {
-    background: #9db300;
-    padding: 18px;
-    text-align: right;
-    font-size: 22px;
-    color: white;
-    cursor: pointer;
-}
-
-/* LINKS */
-.mobile-menu-links {
-    list-style: none;
-    padding: 30px 20px;
-}
-
-.mobile-menu-links li {
-    border-bottom: 1px dashed rgba(255,255,255,0.3);
-}
-
-.mobile-menu-links a {
-    display: block;
-    padding: 15px 5px;
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-/* SHOW ONLY ON MOBILE */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-
-    .nav-links {
-        display: none;
-    }
-}
-
-/* Nav links */
+/* Desktop Nav */
 .nav-links {
     display: flex;
 }
@@ -117,10 +52,66 @@ body {
 
 /* Hamburger */
 .menu-toggle {
-    display: none;
-    font-size: 30px;
+    font-size: 28px;
     color: #fff;
     cursor: pointer;
+    display: none;
+}
+
+/* ===================== MOBILE POPUP MENU ===================== */
+.menu-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 9998;
+    display: none;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 85%;
+    max-width: 340px;
+    height: 100vh;
+    background: #2f2f7f;
+    z-index: 9999;
+    transition: left 0.35s ease;
+    overflow-y: auto;
+}
+
+.mobile-menu.active {
+    left: 0;
+}
+
+.menu-backdrop.active {
+    display: block;
+}
+
+.mobile-menu-header {
+    background: #9db300;
+    padding: 18px;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+}
+
+.mobile-menu-links {
+    list-style: none;
+    padding: 30px 20px;
+}
+
+.mobile-menu-links li {
+    border-bottom: 1px dashed rgba(255,255,255,0.35);
+}
+
+.mobile-menu-links a {
+    display: block;
+    padding: 16px 6px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
 }
 
 /* ===================== HERO ===================== */
@@ -264,7 +255,6 @@ body {
 
 .flavor-card:hover .flavor-icon img {
     transform: scale(1.2);
-    transition: transform 0.3s ease;
 }
 
 /* Flavor gradients */
@@ -306,7 +296,6 @@ body {
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 768px) {
 
-    /* Navbar */
     .navbar {
         padding: 16px 20px;
     }
@@ -317,26 +306,8 @@ body {
 
     .nav-links {
         display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: #000;
-        flex-direction: column;
-        text-align: center;
-        padding: 20px 0;
     }
 
-    .nav-links a {
-        margin: 14px 0;
-        font-size: 1.1rem;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    /* Hero */
     .hero {
         flex-direction: column;
         text-align: center;
