@@ -2,1283 +2,209 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>SIPMAN Goli Soda</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sipman - Sip Bold. Sip Fresh.</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-red: #E63946;
-            --primary-blue: #1D3557;
-            --accent-blue: #457B9D;
-            --white: #FFFFFF;
-            --light-bg: #F1FAEE;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--primary-blue);
-            overflow-x: hidden;
-        }
-
-        /* Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--primary-red);
-            text-decoration: none;
-            letter-spacing: 2px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--primary-blue);
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-red);
-        }
-
-        .cta-button {
-            background: var(--primary-red);
-            color: var(--white);
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background: var(--primary-blue);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .mobile-menu {
-            display: none;
-            cursor: pointer;
-        }
-
-        .mobile-menu span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background: var(--primary-red);
-            margin: 5px 0;
-            transition: 0.3s;
-        }
-
-        /* Hero Section with Slider */
-        .hero {
-            position: relative;
-            height: 100vh;
-            overflow: hidden;
-            margin-top: 70px;
-        }
-
-        .slider-wrapper {
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
-
-        .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-            pointer-events: none;
-        }
-
-        .slide.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .slide:nth-child(1) {
-            background: linear-gradient(135deg, var(--primary-red) 0%, var(--accent-blue) 100%);
-        }
-
-        .slide:nth-child(2) {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-red) 100%);
-        }
-
-        .slide:nth-child(3) {
-            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--primary-blue) 100%);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            color: var(--white);
-            padding: 2rem;
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            font-weight: 300;
-            letter-spacing: 3px;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
-        }
-
-        .hero-title {
-            font-size: 5rem;
-            font-weight: bold;
-            margin-bottom: 1.5rem;
-            animation: fadeInUp 1s ease 0.2s backwards;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero-description {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s ease 0.4s backwards;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            animation: fadeInUp 1s ease 0.6s backwards;
-        }
-
-        .btn-primary, .btn-secondary {
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary {
-            background: var(--white);
-            color: var(--primary-red);
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-blue);
-            color: var(--white);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--white);
-            border: 3px solid var(--white);
-        }
-
-        .btn-secondary:hover {
-            background: var(--white);
-            color: var(--primary-red);
-        }
-
-        /* Floating Shapes */
-        .shape {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.1;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .shape1 {
-            width: 300px;
-            height: 300px;
-            background: var(--white);
-            top: 10%;
-            left: -5%;
-            animation-delay: 0s;
-        }
-
-        .shape2 {
-            width: 200px;
-            height: 200px;
-            background: var(--primary-blue);
-            bottom: 15%;
-            right: -3%;
-            animation-delay: 2s;
-        }
-
-        .shape3 {
-            width: 150px;
-            height: 150px;
-            background: var(--white);
-            top: 60%;
-            left: 5%;
-            animation-delay: 4s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-30px) rotate(180deg); }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Featured Flavors Section */
-        .section {
-            padding: 5rem 2rem;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 3rem;
-            color: var(--primary-blue);
-            margin-bottom: 1rem;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            color: var(--accent-blue);
-            margin-bottom: 3rem;
-        }
-
-        /* Featured Flavors Section with Slider */
-        /* Section */
-.section {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.section-title {
-    font-size: 2.2rem;
-    margin-bottom: 8px;
-}
-
-.section-subtitle {
-    color: #666;
-    margin-bottom: 40px;
-}
-
-/* Slider container */
-.flavors-slider-container {
-    position: relative;
-    max-width: 1100px;
-    margin: auto;
-}
-
-/* Slider */
-.flavors-slider {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 20px 10px;
-}
-
-/* Card */
-.flavor-card {
-    min-width: 240px;
-    background: #fff;
-    border-radius: 16px;
-    padding: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-}
-
-/* Icon container */
-.flavor-icon {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    margin: 0 auto 15px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-}
-
-/* Image fit fix */
-.flavor-icon img {
-    width: 80%;
-    height: 80%;
-    object-fit: contain;
-    display: block;
-}
-
-/* Text */
-.flavor-name {
-    font-size: 1.2rem;
-    margin-bottom: 6px;
-}
-
-.flavor-description {
-    font-size: 0.95rem;
-    color: #555;
-}
-
-/* Arrows */
-.flavor-slider-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #000;
-    color: #fff;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.flavor-arrow-prev { left: -20px; }
-.flavor-arrow-next { right: -20px; }
-
-        .flavors-slider-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            position: relative;
-            padding: 0 80px;
-        }
-
-        .flavors-slider {
-            display: flex;
-            gap: 2rem;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-            padding: 1rem 0;
-        }
-
-        .flavors-slider::-webkit-scrollbar {
-            display: none;
-        }
-
-        .flavors-grid {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .flavor-card {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 2rem;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            min-width: 320px;
-            flex-shrink: 0;
-        }
-
-        .flavor-slider-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 50px;
-            height: 50px;
-            background: var(--primary-red);
-            border: none;
-            border-radius: 50%;
-            color: var(--white);
-            font-size: 2rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .flavor-slider-arrow:hover {
-            background: var(--primary-blue);
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .flavor-arrow-prev {
-            left: 10px;
-        }
-
-        .flavor-arrow-next {
-            right: 10px;
-        }
-
-        .flavor-slider-arrow span {
-            line-height: 1;
-        }
-
-        .flavor-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-        }
-
-        .flavor-icon {
-            width: 150px;
-            height: 150px;
-            margin: 0 auto 1.5rem;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            transition: all 0.3s ease;
-        }
-
-        .flavor-card:hover .flavor-icon {
-            transform: rotate(10deg) scale(1.1);
-        }
-
-        .flavor-name {
-            font-size: 1.8rem;
-            color: var(--primary-blue);
-            margin-bottom: 1rem;
-            font-weight: bold;
-        }
-
-        .flavor-description {
-            color: var(--accent-blue);
-            line-height: 1.8;
-        }
-
-        /* About Section */
-        .about-section {
-            background: linear-gradient(135deg, var(--light-bg) 0%, var(--white) 100%);
-        }
-
-        .about-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-image {
-            position: relative;
-            height: 500px;
-            background: linear-gradient(135deg, var(--primary-red), var(--accent-blue));
-            border-radius: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10rem;
-            color: var(--white);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-        }
-
-        .about-text h3 {
-            font-size: 2.5rem;
-            color: var(--primary-red);
-            margin-bottom: 1.5rem;
-        }
-
-        .about-text p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-            color: var(--primary-blue);
-        }
-
-        /* Products Section */
-        .products-section {
-            background: var(--primary-blue);
-            color: var(--white);
-        }
-
-        .products-section .section-title {
-            color: var(--white);
-        }
-
-        .products-section .section-subtitle {
-            color: var(--light-bg);
-        }
-
-        .products-grid {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .product-card {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .product-card:hover {
-            transform: scale(1.05);
-        }
-
-        .product-image {
-            width: 200px;
-            height: 200px;
-            margin: 0 auto 1.5rem;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-        }
-
-        .product-card:nth-child(1) .product-image {
-            background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
-        }
-
-        .product-card:nth-child(2) .product-image {
-            background: linear-gradient(135deg, #4ecdc4, #44a8b3);
-        }
-
-        .product-card:nth-child(3) .product-image {
-            background: linear-gradient(135deg, #ffd93d, #f6c90e);
-        }
-
-        .product-card:nth-child(4) .product-image {
-            background: linear-gradient(135deg, #a8e6cf, #84d4a6);
-        }
-
-        .product-card:nth-child(5) .product-image {
-            background: linear-gradient(135deg, #ff9ff3, #feca57);
-        }
-
-        .product-card:nth-child(6) .product-image {
-            background: linear-gradient(135deg, #a29bfe, #6c5ce7);
-        }
-
-        .product-title {
-            font-size: 1.5rem;
-            color: var(--primary-blue);
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-
-        .product-tagline {
-            color: var(--accent-blue);
-            font-size: 0.9rem;
-        }
-
-        /* Contact Section */
-        .contact-section {
-            background: var(--light-bg);
-        }
-
-        .contact-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .contact-form {
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--primary-blue);
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid var(--light-bg);
-            border-radius: 10px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-red);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-
-        .submit-button {
-            width: 100%;
-            padding: 1rem;
-            background: var(--primary-red);
-            color: var(--white);
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .submit-button:hover {
-            background: var(--primary-blue);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .social-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--primary-red);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social-icon:hover {
-            background: var(--primary-blue);
-            transform: translateY(-5px) rotate(10deg);
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--primary-blue);
-            color: var(--white);
-            text-align: center;
-            padding: 2rem;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .mobile-menu {
-                display: block;
-            }
-
-            .hero-title {
-                font-size: 3rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-
-            .hero-description {
-                font-size: 1.1rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .about-image {
-                height: 300px;
-                font-size: 6rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .contact-form {
-                padding: 2rem;
-            }
-
-            .slider-arrows {
-                padding: 0 0.5rem;
-            }
-
-            .slider-arrow {
-                width: 45px;
-                height: 45px;
-                font-size: 1.5rem;
-            }
-
-            .flavors-slider-container {
-                padding: 0 60px;
-            }
-
-            .flavor-slider-arrow {
-                width: 40px;
-                height: 40px;
-                font-size: 1.5rem;
-            }
-
-            .flavor-arrow-prev {
-                left: 5px;
-            }
-
-            .flavor-arrow-next {
-                right: 5px;
-            }
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
-        }
-
-        .scroll-indicator::before {
-            content: '↓';
-            font-size: 2rem;
-            color: var(--white);
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-            40% { transform: translateX(-50%) translateY(-20px); }
-            60% { transform: translateX(-50%) translateY(-10px); }
-        }
-
-        /* Slider Controls */
-        .slider-arrows {
-            position: absolute;
-            width: 100%;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 10;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 2rem;
-            pointer-events: none;
-        }
-
-        .slider-arrow {
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 255, 255, 0.2);
-            border: 2px solid var(--white);
-            border-radius: 50%;
-            color: var(--white);
-            font-size: 2rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            pointer-events: auto;
-            backdrop-filter: blur(10px);
-        }
-
-        .slider-arrow:hover {
-            background: var(--white);
-            color: var(--primary-red);
-            transform: scale(1.1);
-        }
-
-        .slider-arrow span {
-            line-height: 1;
-            font-weight: bold;
-        }
-
-        .slider-dots {
-            position: absolute;
-            bottom: 100px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 1rem;
-            z-index: 10;
-        }
-
-        .dot {
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.4);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px solid var(--white);
-        }
-
-        .dot.active {
-            background: var(--white);
-            transform: scale(1.3);
-        }
-
-        .dot:hover {
-            background: var(--white);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#home" class="logo">SIPMAN</a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#flavors">Flavors</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <a href="#contact" class="cta-button">Shop Now</a>
-            <div class="mobile-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="logo">
+        <a href="index.html" style="color:#fff; text-decoration:none;">SIPMAN</a>
+    </div>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#flavors">Flavors</a>
+        <a href="#why">Why Us</a>
+        <a href="#contact">Contact</a>
     </nav>
+</header>
 
-    <!-- Hero Section with Slider -->
-    <section id="home" class="hero">
-        <div class="slider-wrapper">
-            <div class="slide active" data-slide="1">
-                <div class="shape shape1"></div>
-                <div class="shape shape2"></div>
-                <div class="shape shape3"></div>
-                <div class="hero-content">
-                    <p class="hero-subtitle">PREMIUM BEVERAGES</p>
-                    <h1 class="hero-title">Sip Bold. Sip Fresh.</h1>
-                    <p class="hero-description">Experience the ultimate refreshment with Sipman's crafted sodas</p>
-                    <div class="hero-buttons">
-                        <a href="#products" class="btn-primary">Explore Flavors</a>
-                        <a href="#about" class="btn-secondary">Our Story</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="slide" data-slide="2">
-                <div class="shape shape1"></div>
-                <div class="shape shape2"></div>
-                <div class="shape shape3"></div>
-                <div class="hero-content">
-                    <p class="hero-subtitle">AUTHENTIC TASTE</p>
-                    <h1 class="hero-title">Flavor Revolution</h1>
-                    <p class="hero-description">10 incredible flavors crafted for those who dare to be different</p>
-                    <div class="hero-buttons">
-                        <a href="#flavors" class="btn-primary">Discover Flavors</a>
-                        <a href="#contact" class="btn-secondary">Get In Touch</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="slide" data-slide="3">
-                <div class="shape shape1"></div>
-                <div class="shape shape2"></div>
-                <div class="shape shape3"></div>
-                <div class="hero-content">
-                    <p class="hero-subtitle">JOIN THE MOVEMENT</p>
-                    <h1 class="hero-title">Refresh Your World</h1>
-                    <p class="hero-description">Be part of the Sipman family and taste the difference</p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn-primary">Shop Now</a>
-                        <a href="#products" class="btn-secondary">View Collection</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="slider-arrows">
-            <button class="slider-arrow slider-arrow-prev" aria-label="Previous slide">
-                <span>‹</span>
-            </button>
-            <button class="slider-arrow slider-arrow-next" aria-label="Next slide">
-                <span>›</span>
-            </button>
-        </div>
-        
-        <div class="slider-dots">
-            <span class="dot active" data-slide="1"></span>
-            <span class="dot" data-slide="2"></span>
-            <span class="dot" data-slide="3"></span>
-        </div>
-        
-        <div class="scroll-indicator"></div>
-    </section>
-
-    <!-- Featured Flavors Section -->
-<section id="flavors" class="section">
-    <h2 class="section-title">Our Flavors</h2>
-    <p class="section-subtitle">Bold tastes that make every moment memorable</p>
-
-    <div class="flavors-slider-container">
-        <button class="flavor-slider-arrow flavor-arrow-prev" aria-label="Previous flavors">
-            <span>‹</span>
-        </button>
-
-        <div class="flavors-slider">
-
-            <div class="flavor-card">
-                <div class="flavor-icon" style="background: linear-gradient(135deg, #8B4513, #D2691E);">
-                    <img src="images/001__1_-removebg-preview.png" alt="Jeera">
-                </div>
-                <h3 class="flavor-name">Jeera</h3>
-                <p class="flavor-description">Traditional cumin-spiced refreshment with an authentic Indian twist.</p>
-            </div>
-
-            <div class="flavor-card">
-                <div class="flavor-icon" style="background: linear-gradient(135deg, #FFD700, #FFA500);">
-                    <img src="images/AADI2095-removebg-preview.png" alt="Nimbu Pani">
-                </div>
-                <h3 class="flavor-name">Nimbu Pani</h3>
-                <p class="flavor-description">Classic lemon water reimagined with the perfect balance of tang and fizz.</p>
-            </div>
-
-            <div class="flavor-card">
-                <div class="flavor-icon" style="background: linear-gradient(135deg, #98FB98, #FFD700);">
-                    <img src="images/AADI2087-removebg-preview.png" alt="Nimbu Shikanji">
-                </div>
-                <h3 class="flavor-name">Nimbu Shikanji</h3>
-                <p class="flavor-description">Sweet and tangy lemonade with a refreshing Indian street-style kick.</p>
-            </div>
-
-            <div class="flavor-card">
-                <div class="flavor-icon" style="background: linear-gradient(135deg, #FF8C00, #FFA500);">
-                    <img src="images/001-removebg-preview.png" alt="Orange">
-                </div>
-                <h3 class="flavor-name">Orange</h3>
-                <p class="flavor-description">Bursting with fresh citrus flavor and natural orange essence.</p>
-            </div>
-
-            <div class="flavor-card">
-                <div class="flavor-icon" style="background: linear-gradient(135deg, #DC143C, #8B0000);">
-                    <img src="images/AADI2042-removebg-preview.png" alt="Cranberry">
-                </div>
-                <h3 class="flavor-name">Cranberry</h3>
-                <p class="flavor-description">Tart and sophisticated berry notes with a smooth, refreshing finish.</p>
-            </div>
-
-            <div class="flavor-card">
-                <div class="flavor-icon" style="background: linear-gradient(135deg, #4B0082, #8B008B);">
-                    <img src="images/AADI2077-removebg-preview.png" alt="Kalakhatta">
-                </div>
-                <h3 class="flavor-name">Kalakhatta</h3>
-                <p class="flavor-description">Dark berry fusion with a mysterious and bold flavor profile.</p>
-            </div>
-
-            <div class="flavor-card">
-                <div class="flavor-icon" style="background: linear-gradient(135deg, #9ACD32, #32CD32);">
-                    <img src="images/AADI2081-removebg-preview.png" alt="Kacha Aam">
-                </div>
-                <h3 class="flavor-name">Kacha Aam</h3>
-                <p class="flavor-description">Raw mango tanginess that transports you to Indian summer afternoons.</p>
-            </div>
-
-            <div class="flavor-card">
-                <div class="flavor-icon" style="background: linear-gradient(135deg, #4169E1, #1E90FF);">
-                    <img src="images/01-removebg-preview.png" alt="Blueberry">
-                </div>
-                <h3 class="flavor-name">Blueberry</h3>
-                <p class="flavor-description">Sweet and luscious blueberry flavor with a hint of natural berry essence.</p>
-            </div>
-
-            <div class="flavor-card">
-                <div class="flavor-icon" style="background: linear-gradient(135deg, #2F1810, #4A2C1F);">
-                    <img src="images/AADI2091-removebg-preview.png" alt="Cola">
-                </div>
-                <h3 class="flavor-name">Cola</h3>
-                <p class="flavor-description">Classic cola taste with our signature bold and refreshing twist.</p>
-            </div>
-
-            <div class="flavor-card">
-                <div class="flavor-icon" style="background: linear-gradient(135deg, #FFB6C1, #FF69B4);">
-                    <img src="images/AADI2070-removebg-preview.png" alt="Litchi">
-                </div>
-                <h3 class="flavor-name">Litchi</h3>
-                <p class="flavor-description">Exotic litchi sweetness with delicate floral notes and tropical vibes.</p>
-            </div>
-
-        </div>
-
-        <button class="flavor-slider-arrow flavor-arrow-next" aria-label="Next flavors">
-            <span>›</span>
-        </button>
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-text">
+        <h1>Old School Taste.<br>New Age Refreshment.</h1>
+        <p>India’s favorite goli soda, reimagined.</p>
+        <button onclick="scrollToFlavors()">Explore Flavors</button>
+    </div>
+    <div class="hero-image">
+        <img src="" alt="Hero bottle image">
     </div>
 </section>
 
-    <!-- About Section -->
-    <section id="about" class="section about-section">
-        <div class="about-content">
-            <div class="about-image"><img src="Screenshot 2026-01-07 162845.png"></div>
-            <div class="about-text">
-                <h3>The Sipman Story</h3>
-                <p>Founded on the belief that beverages should be bold, refreshing, and unforgettable, Sipman emerged as a premium soda brand that refuses to blend in.</p>
-                <p>We craft each flavor with passion, using quality ingredients and innovative recipes that deliver an experience far beyond ordinary refreshment. Our mission is simple: make every sip count.</p>
-                <p>From our signature color palette of red, blue, and white to our playful approach to flavor, Sipman represents a new generation of beverages—one that's confident, energetic, and unapologetically fun.</p>
-                <a href="#products" class="btn-primary" style="display: inline-block; margin-top: 1rem;">Discover More</a>
+<!-- ABOUT -->
+<section id="about" class="section about-section">
+    <h2>About SIPMAN</h2>
+
+    <p>
+        Founded on the belief that beverages should be bold, refreshing, and unforgettable,
+        Sipman emerged as a premium soda brand that refuses to blend in.
+    </p>
+
+    <p>
+        We craft each flavor with passion, using quality ingredients and innovative recipes
+        that deliver an experience far beyond ordinary refreshment.
+        Our mission is simple: make every sip count.
+    </p>
+
+    <p>
+        From our signature color palette of red, blue, and white to our playful approach to flavor,
+        Sipman represents a new generation of beverages—one that's confident, energetic,
+        and unapologetically fun.
+    </p>
+
+    <a href="discover.html" class="btn-primary">Discover More</a>
+</section>
+
+<!-- FLAVORS -->
+<section id="flavors" class="section flavors-section">
+
+    <h2 class="section-title">Our Flavors</h2>
+    <p class="section-subtitle">Bold tastes that make every moment memorable</p>
+
+    <div class="flavors-slider">
+
+        <div class="flavor-card">
+            <div class="flavor-icon" style="background: linear-gradient(135deg, #8B4513, #D2691E);">
+                <img src="images/001__1_-removebg-preview.png" alt="Jeera">
             </div>
+            <h3 class="flavor-name">Jeera</h3>
+            <p class="flavor-description">
+                Traditional cumin-spiced refreshment with an authentic Indian twist.
+            </p>
         </div>
-    </section>
 
-
-    <!-- Contact Section -->
-    <section id="contact" class="section contact-section">
-        <h2 class="section-title">Get In Touch</h2>
-        <p class="section-subtitle">We'd love to hear from you</p>
-        <div class="contact-container">
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" placeholder="Your name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="your.email@example.com" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" placeholder="Tell us what's on your mind..." required></textarea>
-                </div>
-                <button type="submit" class="submit-button">Send Message</button>
-            </form>
-            <div class="social-links">
-                <a href="https://www.instagram.com/sipmangolisoda?igsh=MWY5ZW5idTEwcGMw" class="social-icon"><img src="image-removebg-preview.png"</a>
-                <a href="#" class="social-icon"></a>
-                <a href="#" class="social-icon">🐦</a>
-                <a href="#" class="social-icon">💼</a>
+        <div class="flavor-card">
+            <div class="flavor-icon" style="background: linear-gradient(135deg, #FFD700, #FFA500);">
+                <img src="images/AADI2095-removebg-preview.png" alt="Nimbu Pani">
             </div>
+            <h3 class="flavor-name">Nimbu Pani</h3>
+            <p class="flavor-description">
+                Classic lemon water reimagined with the perfect balance of tang and fizz.
+            </p>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2026 Sipman. All Rights Reserved. | Sip Bold. Sip Fresh.</p>
-    </footer>
+        <div class="flavor-card">
+            <div class="flavor-icon" style="background: linear-gradient(135deg, #98FB98, #FFD700);">
+                <img src="images/AADI2087-removebg-preview.png" alt="Nimbu Shikanji">
+            </div>
+            <h3 class="flavor-name">Nimbu Shikanji</h3>
+            <p class="flavor-description">
+                Sweet and tangy lemonade with a refreshing Indian street-style kick.
+            </p>
+        </div>
 
-    <script>
-        // Hero Slider functionality
-        let currentSlide = 1;
-        const totalSlides = 3;
-        let slideInterval;
+        <div class="flavor-card">
+            <div class="flavor-icon" style="background: linear-gradient(135deg, #FF8C00, #FFA500);">
+                <img src="images/001-removebg-preview.png" alt="Orange">
+            </div>
+            <h3 class="flavor-name">Orange</h3>
+            <p class="flavor-description">
+                Bursting with fresh citrus flavor and natural orange essence.
+            </p>
+        </div>
 
-        function showSlide(n) {
-            const slides = document.querySelectorAll('.slide');
-            const dots = document.querySelectorAll('.dot');
-            
-            if (n > totalSlides) currentSlide = 1;
-            if (n < 1) currentSlide = totalSlides;
-            else currentSlide = n;
-            
-            slides.forEach(slide => slide.classList.remove('active'));
-            dots.forEach(dot => dot.classList.remove('active'));
-            
-            slides[currentSlide - 1].classList.add('active');
-            dots[currentSlide - 1].classList.add('active');
-        }
+        <div class="flavor-card">
+            <div class="flavor-icon" style="background: linear-gradient(135deg, #DC143C, #8B0000);">
+                <img src="images/AADI2042-removebg-preview.png" alt="Cranberry">
+            </div>
+            <h3 class="flavor-name">Cranberry</h3>
+            <p class="flavor-description">
+                Tart and sophisticated berry notes with a smooth, refreshing finish.
+            </p>
+        </div>
 
-        function nextSlide() {
-            showSlide(currentSlide + 1);
-        }
+        <div class="flavor-card">
+            <div class="flavor-icon" style="background: linear-gradient(135deg, #4B0082, #8B008B);">
+                <img src="images/AADI2077-removebg-preview.png" alt="Kalakhatta">
+            </div>
+            <h3 class="flavor-name">Kalakhatta</h3>
+            <p class="flavor-description">
+                Dark berry fusion with a mysterious and bold flavor profile.
+            </p>
+        </div>
 
-        function prevSlide() {
-            showSlide(currentSlide - 1);
-        }
+        <div class="flavor-card">
+            <div class="flavor-icon" style="background: linear-gradient(135deg, #9ACD32, #32CD32);">
+                <img src="images/AADI2081-removebg-preview.png" alt="Kacha Aam">
+            </div>
+            <h3 class="flavor-name">Kacha Aam</h3>
+            <p class="flavor-description">
+                Raw mango tanginess that transports you to Indian summer afternoons.
+            </p>
+        </div>
 
-        function startSlideshow() {
-            slideInterval = setInterval(nextSlide, 5000);
-        }
+        <div class="flavor-card">
+            <div class="flavor-icon" style="background: linear-gradient(135deg, #4169E1, #1E90FF);">
+                <img src="images/01-removebg-preview.png" alt="Blueberry">
+            </div>
+            <h3 class="flavor-name">Blueberry</h3>
+            <p class="flavor-description">
+                Sweet and luscious blueberry flavor with a hint of natural berry essence.
+            </p>
+        </div>
 
-        function stopSlideshow() {
-            clearInterval(slideInterval);
-        }
+        <div class="flavor-card">
+            <div class="flavor-icon" style="background: linear-gradient(135deg, #2F1810, #4A2C1F);">
+                <img src="images/AADI2091-removebg-preview.png" alt="Cola">
+            </div>
+            <h3 class="flavor-name">Cola</h3>
+            <p class="flavor-description">
+                Classic cola taste with our signature bold and refreshing twist.
+            </p>
+        </div>
 
-        // Slider controls
-        document.querySelector('.slider-arrow-next').addEventListener('click', () => {
-            nextSlide();
-            stopSlideshow();
-            startSlideshow();
-        });
+        <div class="flavor-card">
+            <div class="flavor-icon" style="background: linear-gradient(135deg, #FFB6C1, #FF69B4);">
+                <img src="images/AADI2070-removebg-preview.png" alt="Litchi">
+            </div>
+            <h3 class="flavor-name">Litchi</h3>
+            <p class="flavor-description">
+                Exotic litchi sweetness with delicate floral notes and tropical vibes.
+            </p>
+        </div>
 
-        document.querySelector('.slider-arrow-prev').addEventListener('click', () => {
-            prevSlide();
-            stopSlideshow();
-            startSlideshow();
-        });
+    </div>
+</section>
 
-        document.querySelectorAll('.dot').forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                showSlide(index + 1);
-                stopSlideshow();
-                startSlideshow();
-            });
-        });
+<!-- WHY US -->
+<section id="why" class="section">
+    <h2>Why SIPMAN?</h2>
 
-        // Start automatic slideshow
-        startSlideshow();
+    <div class="why-grid">
+        <div class="why-card">
+            <img src="" alt="Natural ingredients">
+            <h3>Natural Ingredients</h3>
+            <p>No artificial nonsense. Just real taste.</p>
+        </div>
 
-        // Flavors slider functionality
-        const flavorsSlider = document.querySelector('.flavors-slider');
-        const flavorPrevBtn = document.querySelector('.flavor-arrow-prev');
-        const flavorNextBtn = document.querySelector('.flavor-arrow-next');
+        <div class="why-card">
+            <img src="" alt="Traditional recipe">
+            <h3>Traditional Recipe</h3>
+            <p>Inspired by classic Indian goli soda.</p>
+        </div>
 
-        flavorPrevBtn.addEventListener('click', () => {
-            flavorsSlider.scrollBy({
-                left: -350,
-                behavior: 'smooth'
-            });
-        });
+        <div class="why-card">
+            <img src="" alt="Refreshing">
+            <h3>Ultra Refreshing</h3>
+            <p>Perfect fizz for every mood.</p>
+        </div>
+    </div>
+</section>
 
-        flavorNextBtn.addEventListener('click', () => {
-            flavorsSlider.scrollBy({
-                left: 350,
-                behavior: 'smooth'
-            });
-        });
+<!-- CONTACT -->
+<section id="contact" class="section gray">
+    <h2>Contact Us</h2>
+    <p>Email: sipmangolisoda@gmail.com</p>
+    <p>Phone: +91 XXXXXXXXXX</p>
+</section>
 
-        // Touch/drag scrolling for flavors
-        let isDown = false;
-        let startX;
-        let scrollLeft;
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2026 SIPMAN Goli Soda. All Rights Reserved.</p>
+</footer>
 
-        flavorsSlider.addEventListener('mousedown', (e) => {
-            isDown = true;
-            startX = e.pageX - flavorsSlider.offsetLeft;
-            scrollLeft = flavorsSlider.scrollLeft;
-        });
-
-        flavorsSlider.addEventListener('mouseleave', () => {
-            isDown = false;
-        });
-
-        flavorsSlider.addEventListener('mouseup', () => {
-            isDown = false;
-        });
-
-        flavorsSlider.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - flavorsSlider.offsetLeft;
-            const walk = (x - startX) * 2;
-            flavorsSlider.scrollLeft = scrollLeft - walk;
-        });
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.style.boxShadow = '0 5px 20px rgba(0,0,0,0.15)';
-            } else {
-                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-            }
-        });
-
-        // Form submission
-        document.querySelector('.contact-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you for reaching out! We\'ll get back to you soon.');
-            e.target.reset();
-        });
-
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-        });
-
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.flavor-card, .product-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'all 0.6s ease';
-            observer.observe(card);
-        });
-    </script>
+<script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
