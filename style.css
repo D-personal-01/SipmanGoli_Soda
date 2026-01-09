@@ -165,9 +165,19 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 90px 40px;
+    padding-bottom: 180px; /* space for wave */
     background: linear-gradient(135deg, #e10600, #b80000);
     color: #fff;
+    position: relative;   /* required for waves & bubbles */
+    overflow: hidden;     /* keeps waves clean */
 }
+
+@media (max-width: 768px) {
+    .hero {
+        padding-bottom: 140px;
+    }
+}
+
 
 .hero-text h1 {
     font-size: 48px;
@@ -624,5 +634,6 @@ body {
 .whatsapp-btn {
     background: #25D366;
 }
+
 
 
