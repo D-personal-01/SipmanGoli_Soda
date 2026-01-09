@@ -197,6 +197,57 @@ body {
     width: 300px;
 }
 
+/* ===================== HERO BUBBLES ===================== */
+.bubbles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    animation: rise 10s infinite ease-in;
+}
+
+/* Different sizes & positions */
+.bubble:nth-child(1) { left: 10%; width: 20px; height: 20px; animation-duration: 8s; }
+.bubble:nth-child(2) { left: 25%; width: 35px; height: 35px; animation-duration: 12s; }
+.bubble:nth-child(3) { left: 40%; width: 15px; height: 15px; animation-duration: 7s; }
+.bubble:nth-child(4) { left: 55%; width: 30px; height: 30px; animation-duration: 10s; }
+.bubble:nth-child(5) { left: 70%; width: 25px; height: 25px; animation-duration: 9s; }
+.bubble:nth-child(6) { left: 85%; width: 18px; height: 18px; animation-duration: 11s; }
+
+@keyframes rise {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-120vh);
+        opacity: 0;
+    }
+}
+
+/* Make sure hero content stays above bubbles */
+.hero {
+    position: relative;
+}
+
+.hero-text,
+.hero-image {
+    position: relative;
+    z-index: 2;
+}
+
 /* ===================== SECTIONS ===================== */
 .section {
     padding: 70px 40px;
@@ -474,4 +525,5 @@ body {
     }
 
     .discover-hero-text h1 {
+
 
