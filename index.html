@@ -19,16 +19,25 @@
         </a>
     </div>
 
-    <!-- Hamburger (Mobile) -->
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <!-- HAMBURGER BUTTON -->
+<div class="menu-toggle" onclick="openMenu()">☰</div>
 
-    <nav class="nav-links">
-        <a href="#about" onclick="toggleMenu()">About</a>
-        <a href="#flavors" onclick="toggleMenu()">Flavors</a>
-        <a href="#why" onclick="toggleMenu()">Why Us</a>
-        <a href="#contact" onclick="toggleMenu()">Contact</a>
-    </nav>
-</header>
+<!-- MOBILE POPUP MENU -->
+<div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+        <span onclick="closeMenu()">✕</span>
+    </div>
+
+    <ul class="mobile-menu-links">
+        <li><a href="#home" onclick="closeMenu()">Home</a></li>
+        <li><a href="#about" onclick="closeMenu()">About Us</a></li>
+        <li><a href="#flavors" onclick="closeMenu()">Flavors</a></li>
+        <li><a href="#franchise" onclick="closeMenu()">Franchise</a></li>
+        <li><a href="#video" onclick="closeMenu()">Video</a></li>
+        <li><a href="#contact" onclick="closeMenu()">Contact Us</a></li>
+    </ul>
+</div>
+
 
 <!-- ================= HERO ================= -->
 <section class="hero">
@@ -208,3 +217,4 @@ function scrollToFlavors() {
 
 </body>
 </html>
+
