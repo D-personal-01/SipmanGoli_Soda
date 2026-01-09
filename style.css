@@ -1,3 +1,4 @@
+/* ===================== GLOBAL ===================== */
 * {
     margin: 0;
     padding: 0;
@@ -27,13 +28,17 @@ body {
 }
 
 .logo img {
-    height: 75px;     
+    height: 75px;
     width: auto;
     display: block;
 }
 
+/* Nav links */
+.nav-links {
+    display: flex;
+}
 
-.navbar nav a {
+.nav-links a {
     color: #fff;
     margin-left: 22px;
     text-decoration: none;
@@ -41,11 +46,19 @@ body {
     transition: opacity 0.2s ease;
 }
 
-.navbar nav a:hover {
+.nav-links a:hover {
     opacity: 0.75;
 }
 
-/* ===================== HERO (INDEX) ===================== */
+/* Hamburger */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* ===================== HERO ===================== */
 .hero {
     display: flex;
     align-items: center;
@@ -54,7 +67,6 @@ body {
     background: linear-gradient(135deg, #e10600, #b80000);
     color: #fff;
 }
-
 
 .hero-text h1 {
     font-size: 48px;
@@ -148,7 +160,6 @@ body {
     gap: 22px;
     overflow-x: auto;
     padding: 10px 5px 30px;
-    scroll-behavior: smooth;
 }
 
 .flavors-slider::-webkit-scrollbar {
@@ -168,7 +179,6 @@ body {
     transform: translateY(-6px);
 }
 
-/* Bigger bottle icons */
 .flavor-icon {
     width: 150px;
     height: 150px;
@@ -177,11 +187,9 @@ body {
     align-items: center;
     justify-content: center;
     margin: 0 auto 18px;
-    overflow: visible;
     box-shadow: 0 8px 22px rgba(0,0,0,0.18);
 }
 
-/* Make bottles dominant */
 .flavor-icon img {
     width: 100%;
     height: 100%;
@@ -189,13 +197,12 @@ body {
     transform: scale(1.1);
 }
 
-/* Hover pop effect */
 .flavor-card:hover .flavor-icon img {
     transform: scale(1.2);
     transition: transform 0.3s ease;
 }
 
-/* Individual gradients */
+/* Flavor gradients */
 .jeera { background: linear-gradient(135deg, #8B4513, #D2691E); }
 .nimbu { background: linear-gradient(135deg, #FFD700, #FFA500); }
 .shikanji { background: linear-gradient(135deg, #98FB98, #FFD700); }
@@ -206,17 +213,6 @@ body {
 .blueberry { background: linear-gradient(135deg, #4169E1, #1E90FF); }
 .cola { background: linear-gradient(135deg, #2F1810, #4A2C1F); }
 .litchi { background: linear-gradient(135deg, #FFB6C1, #FF69B4); }
-
-
-.flavor-name {
-    font-size: 1.2rem;
-    margin-bottom: 6px;
-}
-
-.flavor-description {
-    font-size: 0.95rem;
-    color: #555;
-}
 
 /* ===================== WHY US ===================== */
 .why-grid {
@@ -233,58 +229,6 @@ body {
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-.why-card img {
-    width: 60px;
-    margin-bottom: 12px;
-}
-
-/* ===================== DISCOVER PAGE ===================== */
-.discover-hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 90px 40px;
-    background: linear-gradient(135deg, #e10600, #0033cc);
-    color: #fff;
-}
-
-.discover-hero-text h1 {
-    font-size: 3rem;
-    margin-bottom: 12px;
-}
-
-.discover-hero-text p {
-    font-size: 1.1rem;
-    max-width: 520px;
-}
-
-.discover-hero-image img {
-    width: 320px;
-}
-
-.process-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.process-card {
-    background: #fff;
-    padding: 25px;
-    border-radius: 18px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-}
-
-.process-card img {
-    width: 70px;
-    margin-bottom: 12px;
-}
-
-.cta-section {
-    text-align: center;
-}
-
 /* ===================== FOOTER ===================== */
 .footer {
     background: #000;
@@ -297,8 +241,38 @@ body {
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 768px) {
 
-    .hero,
-    .discover-hero {
+    /* Navbar */
+    .navbar {
+        padding: 16px 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #000;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .nav-links a {
+        margin: 14px 0;
+        font-size: 1.1rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Hero */
+    .hero {
         flex-direction: column;
         text-align: center;
     }
@@ -307,12 +281,7 @@ body {
         font-size: 36px;
     }
 
-    .discover-hero-text h1 {
-        font-size: 2.2rem;
-    }
-
-    .hero-image img,
-    .discover-hero-image img {
+    .hero-image img {
         margin-top: 30px;
         width: 260px;
     }
@@ -321,8 +290,3 @@ body {
         min-width: 220px;
     }
 }
-
-
-
-
-
