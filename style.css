@@ -50,9 +50,10 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 90px 40px;
-    background: linear-gradient(135deg, #ff9800, #ff5722);
+    background: linear-gradient(135deg, #e10600, #b80000);
     color: #fff;
 }
+
 
 .hero-text h1 {
     font-size: 48px;
@@ -297,3 +298,4 @@ body {
         min-width: 220px;
     }
 }
+
