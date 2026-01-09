@@ -8,14 +8,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="bubbles">
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-</div>
 
 <!-- ================= NAVBAR ================= -->
 <header class="navbar">
@@ -55,6 +47,17 @@
 
 <!-- ================= HERO ================= -->
 <section class="hero" id="home">
+
+    <!-- BUBBLES BACKGROUND -->
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
     <div class="hero-text">
         <h1>Old School Taste.<br>New Age Refreshment.</h1>
         <p>India’s favorite goli soda, reimagined.</p>
@@ -62,9 +65,12 @@
     </div>
 
     <div class="hero-image">
-        <img src="/images/01-removebg-preview.png">
+        <!-- ❌ removed leading slash -->
+        <img src="images/01-removebg-preview.png" alt="SIPMAN bottle">
     </div>
+
 </section>
+
 
 <!-- ================= ABOUT ================= -->
 <section id="about" class="section about-section">
@@ -271,6 +277,7 @@ function scrollToFlavors() {
 
 </body>
 </html>
+
 
 
 
