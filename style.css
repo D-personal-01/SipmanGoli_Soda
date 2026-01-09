@@ -27,7 +27,7 @@ body {
 }
 
 .logo img {
-    height: 55px;     
+    height: 75px;     
     width: auto;
     display: block;
 }
@@ -299,6 +299,7 @@ body {
         min-width: 220px;
     }
 }
+
 
 
 
