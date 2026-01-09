@@ -1,24 +1,35 @@
-// Smooth scroll to Flavors section from Hero button
+/* ===================== SMOOTH SCROLL ===================== */
 function scrollToFlavors() {
     const flavorsSection = document.getElementById("flavors");
     if (flavorsSection) {
-        flavorsSection.scrollIntoView({
-            behavior: "smooth"
-        });
+        flavorsSection.scrollIntoView({ behavior: "smooth" });
     }
 }
 
-// Optional: future use placeholder
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("SIPMAN Goli Soda website loaded successfully");
-});
-
+/* ===================== MOBILE MENU ===================== */
 function openMenu() {
-    document.getElementById("mobileMenu").classList.add("active");
+    const menu = document.getElementById("mobileMenu");
+    const backdrop = document.querySelector(".menu-backdrop");
+
+    menu.classList.add("active");
+    backdrop.classList.add("active");
+
+    // Disable background scroll
     document.body.style.overflow = "hidden";
 }
 
 function closeMenu() {
-    document.getElementById("mobileMenu").classList.remove("active");
+    const menu = document.getElementById("mobileMenu");
+    const backdrop = document.querySelector(".menu-backdrop");
+
+    menu.classList.remove("active");
+    backdrop.classList.remove("active");
+
+    // Enable background scroll
     document.body.style.overflow = "auto";
 }
+
+/* ===================== PAGE LOAD ===================== */
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("SIPMAN Goli Soda website loaded successfully");
+});
