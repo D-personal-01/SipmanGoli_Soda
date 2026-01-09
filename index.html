@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>SIPMAN Goli Soda</title>
-
-    <!-- IMPORTANT FOR MOBILE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="style.css">
@@ -14,18 +12,27 @@
 <!-- ================= NAVBAR ================= -->
 <header class="navbar">
     <div class="logo">
-        <a href="index.html">
-            <img src="images/Screenshot_2026-01-07_162845-removebg-preview (6).png" alt="SIPMAN Goli Soda Logo">
-        </a>
+        <img src="images/Screenshot_2026-01-07_162845-removebg-preview (6).png" alt="Sipman Logo">
     </div>
 
-  <!-- HAMBURGER BUTTON -->
-<div class="menu-toggle" onclick="openMenu()">☰</div>
+    <!-- Hamburger -->
+    <div class="menu-toggle" onclick="openMenu()">☰</div>
 
-<!-- MOBILE POPUP MENU -->
+    <!-- Desktop Menu -->
+    <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#flavors">Flavors</a>
+        <a href="#why">Why Us</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- ================= MOBILE MENU ================= -->
+<div class="menu-backdrop" onclick="closeMenu()"></div>
+
 <div class="mobile-menu" id="mobileMenu">
     <div class="mobile-menu-header">
-        <span onclick="closeMenu()">✕</span>
+        <span onclick="closeMenu()">CLOSE ✕</span>
     </div>
 
     <ul class="mobile-menu-links">
@@ -38,9 +45,8 @@
     </ul>
 </div>
 
-
 <!-- ================= HERO ================= -->
-<section class="hero">
+<section class="hero" id="home">
     <div class="hero-text">
         <h1>Old School Taste.<br>New Age Refreshment.</h1>
         <p>India’s favorite goli soda, reimagined.</p>
@@ -48,7 +54,7 @@
     </div>
 
     <div class="hero-image">
-        <img src="" alt="Hero bottle image">
+        <img src="images/hero-bottle.png" alt="Hero bottle image">
     </div>
 </section>
 
@@ -64,13 +70,6 @@
     <p>
         We craft each flavor with passion, using quality ingredients and innovative recipes
         that deliver an experience far beyond ordinary refreshment.
-        Our mission is simple: make every sip count.
-    </p>
-
-    <p>
-        From our signature color palette of red, blue, and white to our playful approach to flavor,
-        Sipman represents a new generation of beverages—one that's confident, energetic,
-        and unapologetically fun.
     </p>
 
     <a href="discover.html" class="btn-primary">Discover More</a>
@@ -78,35 +77,24 @@
 
 <!-- ================= FLAVORS ================= -->
 <section id="flavors" class="section flavors-section">
-
     <h2 class="section-title">Our Flavors</h2>
     <p class="section-subtitle">Bold tastes that make every moment memorable</p>
 
     <div class="flavors-slider">
-
-        <!-- Flavor Card -->
         <div class="flavor-card">
             <div class="flavor-icon jeera">
                 <img src="images/001__1_-removebg-preview.png" alt="Jeera">
             </div>
             <h3>Jeera</h3>
-            <p>Bold cumin flavor with a sharp, refreshing soda kick.</p>
+            <p>Bold cumin flavor with a sharp soda kick.</p>
         </div>
 
         <div class="flavor-card">
             <div class="flavor-icon nimbu">
-                <img src="images/AADI2095-removebg-preview.png" alt="Nimbu Pani">
+                <img src="images/AADI2095-removebg-preview.png" alt="Nimbu">
             </div>
             <h3>Nimbu Pani</h3>
-            <p>Tangy lemon refreshment with a perfectly balanced fizz.</p>
-        </div>
-
-        <div class="flavor-card">
-            <div class="flavor-icon shikanji">
-                <img src="images/AADI2087-removebg-preview.png" alt="Nimbu Shikanji">
-            </div>
-            <h3>Nimbu Shikanji</h3>
-            <p>Sweet and zesty street-style lemonade with bold character.</p>
+            <p>Tangy lemon refreshment.</p>
         </div>
 
         <div class="flavor-card">
@@ -114,57 +102,8 @@
                 <img src="images/001-removebg-preview.png" alt="Orange">
             </div>
             <h3>Orange</h3>
-            <p>Juicy orange flavor packed with a vibrant soda punch.</p>
+            <p>Juicy orange soda punch.</p>
         </div>
-
-        <div class="flavor-card">
-            <div class="flavor-icon cranberry">
-                <img src="images/AADI2042-removebg-preview.png" alt="Cranberry">
-            </div>
-            <h3>Cranberry</h3>
-            <p>Rich berry sharpness with a smooth, refreshing finish.</p>
-        </div>
-
-        <div class="flavor-card">
-            <div class="flavor-icon kalakhatta">
-                <img src="images/AADI2077-removebg-preview.png" alt="Kalakhatta">
-            </div>
-            <h3>Kalakhatta</h3>
-            <p>Dark, bold berry fusion inspired by classic Indian flavors.</p>
-        </div>
-
-        <div class="flavor-card">
-            <div class="flavor-icon aam">
-                <img src="images/AADI2081-removebg-preview.png" alt="Kacha Aam">
-            </div>
-            <h3>Kacha Aam</h3>
-            <p>Raw mango tanginess with a powerful soda twist.</p>
-        </div>
-
-        <div class="flavor-card">
-            <div class="flavor-icon blueberry">
-                <img src="images/01-removebg-preview.png" alt="Blueberry">
-            </div>
-            <h3>Blueberry</h3>
-            <p>Smooth blueberry sweetness with a refreshing fizz.</p>
-        </div>
-
-        <div class="flavor-card">
-            <div class="flavor-icon cola">
-                <img src="images/AADI2091-removebg-preview.png" alt="Cola">
-            </div>
-            <h3>Cola</h3>
-            <p>Classic cola taste with a bold SIPMAN edge.</p>
-        </div>
-
-        <div class="flavor-card">
-            <div class="flavor-icon litchi">
-                <img src="images/AADI2070-removebg-preview.png" alt="Litchi">
-            </div>
-            <h3>Litchi</h3>
-            <p>Sweet litchi flavor with a rich, refreshing soda finish.</p>
-        </div>
-
     </div>
 </section>
 
@@ -175,17 +114,17 @@
     <div class="why-grid">
         <div class="why-card">
             <h3>Natural Ingredients</h3>
-            <p>No artificial nonsense. Just real taste.</p>
+            <p>No artificial nonsense.</p>
         </div>
 
         <div class="why-card">
             <h3>Traditional Recipe</h3>
-            <p>Inspired by classic Indian goli soda.</p>
+            <p>Inspired by classic goli soda.</p>
         </div>
 
         <div class="why-card">
             <h3>Ultra Refreshing</h3>
-            <p>Perfect fizz for every mood.</p>
+            <p>Perfect fizz every time.</p>
         </div>
     </div>
 </section>
@@ -203,18 +142,23 @@
 </footer>
 
 <!-- ================= JS ================= -->
-<script src="script.js"></script>
-
 <script>
-function toggleMenu() {
-    document.querySelector('.nav-links').classList.toggle('active');
+function openMenu() {
+    document.getElementById("mobileMenu").classList.add("active");
+    document.querySelector(".menu-backdrop").classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
+function closeMenu() {
+    document.getElementById("mobileMenu").classList.remove("active");
+    document.querySelector(".menu-backdrop").classList.remove("active");
+    document.body.style.overflow = "auto";
 }
 
 function scrollToFlavors() {
-    document.getElementById('flavors').scrollIntoView({ behavior: 'smooth' });
+    document.getElementById("flavors").scrollIntoView({ behavior: "smooth" });
 }
 </script>
 
 </body>
 </html>
-
