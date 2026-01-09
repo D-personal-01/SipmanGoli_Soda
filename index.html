@@ -3,39 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>SIPMAN Goli Soda</title>
+
+    <!-- IMPORTANT FOR MOBILE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- NAVBAR -->
+<!-- ================= NAVBAR ================= -->
 <header class="navbar">
-   <div class="logo">
-    <a href="index.html">
-        <img src="images/Screenshot_2026-01-07_162845-removebg-preview (6).png" alt="SIPMAN Goli Soda Logo">
-    </a>
-</div>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#flavors">Flavors</a>
-        <a href="#why">Why Us</a>
-        <a href="#contact">Contact</a>
+    <div class="logo">
+        <a href="index.html">
+            <img src="images/Screenshot_2026-01-07_162845-removebg-preview (6).png" alt="SIPMAN Goli Soda Logo">
+        </a>
+    </div>
+
+    <!-- Hamburger (Mobile) -->
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <nav class="nav-links">
+        <a href="#about" onclick="toggleMenu()">About</a>
+        <a href="#flavors" onclick="toggleMenu()">Flavors</a>
+        <a href="#why" onclick="toggleMenu()">Why Us</a>
+        <a href="#contact" onclick="toggleMenu()">Contact</a>
     </nav>
 </header>
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 <section class="hero">
     <div class="hero-text">
         <h1>Old School Taste.<br>New Age Refreshment.</h1>
         <p>India’s favorite goli soda, reimagined.</p>
         <button onclick="scrollToFlavors()">Explore Flavors</button>
     </div>
+
     <div class="hero-image">
         <img src="" alt="Hero bottle image">
     </div>
 </section>
 
-<!-- ABOUT -->
+<!-- ================= ABOUT ================= -->
 <section id="about" class="section about-section">
     <h2>About SIPMAN</h2>
 
@@ -59,7 +67,7 @@
     <a href="discover.html" class="btn-primary">Discover More</a>
 </section>
 
-<!-- FLAVORS -->
+<!-- ================= FLAVORS ================= -->
 <section id="flavors" class="section flavors-section">
 
     <h2 class="section-title">Our Flavors</h2>
@@ -67,153 +75,136 @@
 
     <div class="flavors-slider">
 
+        <!-- Flavor Card -->
         <div class="flavor-card">
             <div class="flavor-icon jeera">
                 <img src="images/001__1_-removebg-preview.png" alt="Jeera">
             </div>
-            <h3 class="flavor-name">Jeera</h3>
-            <p class="flavor-description">
-                Bold cumin flavor with a sharp, refreshing soda kick.
-            </p>
+            <h3>Jeera</h3>
+            <p>Bold cumin flavor with a sharp, refreshing soda kick.</p>
         </div>
 
         <div class="flavor-card">
             <div class="flavor-icon nimbu">
                 <img src="images/AADI2095-removebg-preview.png" alt="Nimbu Pani">
             </div>
-            <h3 class="flavor-name">Nimbu Pani</h3>
-            <p class="flavor-description">
-                Tangy lemon refreshment with a perfectly balanced fizz.
-            </p>
+            <h3>Nimbu Pani</h3>
+            <p>Tangy lemon refreshment with a perfectly balanced fizz.</p>
         </div>
 
         <div class="flavor-card">
             <div class="flavor-icon shikanji">
                 <img src="images/AADI2087-removebg-preview.png" alt="Nimbu Shikanji">
             </div>
-            <h3 class="flavor-name">Nimbu Shikanji</h3>
-            <p class="flavor-description">
-                Sweet and zesty street-style lemonade with bold character.
-            </p>
+            <h3>Nimbu Shikanji</h3>
+            <p>Sweet and zesty street-style lemonade with bold character.</p>
         </div>
 
         <div class="flavor-card">
             <div class="flavor-icon orange">
                 <img src="images/001-removebg-preview.png" alt="Orange">
             </div>
-            <h3 class="flavor-name">Orange</h3>
-            <p class="flavor-description">
-                Juicy orange flavor packed with a vibrant soda punch.
-            </p>
+            <h3>Orange</h3>
+            <p>Juicy orange flavor packed with a vibrant soda punch.</p>
         </div>
 
         <div class="flavor-card">
             <div class="flavor-icon cranberry">
                 <img src="images/AADI2042-removebg-preview.png" alt="Cranberry">
             </div>
-            <h3 class="flavor-name">Cranberry</h3>
-            <p class="flavor-description">
-                Rich berry sharpness with a smooth, refreshing finish.
-            </p>
+            <h3>Cranberry</h3>
+            <p>Rich berry sharpness with a smooth, refreshing finish.</p>
         </div>
 
         <div class="flavor-card">
             <div class="flavor-icon kalakhatta">
                 <img src="images/AADI2077-removebg-preview.png" alt="Kalakhatta">
             </div>
-            <h3 class="flavor-name">Kalakhatta</h3>
-            <p class="flavor-description">
-                Dark, bold berry fusion inspired by classic Indian flavors.
-            </p>
+            <h3>Kalakhatta</h3>
+            <p>Dark, bold berry fusion inspired by classic Indian flavors.</p>
         </div>
 
         <div class="flavor-card">
             <div class="flavor-icon aam">
                 <img src="images/AADI2081-removebg-preview.png" alt="Kacha Aam">
             </div>
-            <h3 class="flavor-name">Kacha Aam</h3>
-            <p class="flavor-description">
-                Raw mango tanginess with a powerful soda twist.
-            </p>
+            <h3>Kacha Aam</h3>
+            <p>Raw mango tanginess with a powerful soda twist.</p>
         </div>
 
         <div class="flavor-card">
             <div class="flavor-icon blueberry">
                 <img src="images/01-removebg-preview.png" alt="Blueberry">
             </div>
-            <h3 class="flavor-name">Blueberry</h3>
-            <p class="flavor-description">
-                Smooth blueberry sweetness with a refreshing fizz.
-            </p>
+            <h3>Blueberry</h3>
+            <p>Smooth blueberry sweetness with a refreshing fizz.</p>
         </div>
 
         <div class="flavor-card">
             <div class="flavor-icon cola">
                 <img src="images/AADI2091-removebg-preview.png" alt="Cola">
             </div>
-            <h3 class="flavor-name">Cola</h3>
-            <p class="flavor-description">
-                Classic cola taste with a bold SIPMAN edge.
-            </p>
+            <h3>Cola</h3>
+            <p>Classic cola taste with a bold SIPMAN edge.</p>
         </div>
 
         <div class="flavor-card">
             <div class="flavor-icon litchi">
                 <img src="images/AADI2070-removebg-preview.png" alt="Litchi">
             </div>
-            <h3 class="flavor-name">Litchi</h3>
-            <p class="flavor-description">
-                Sweet litchi flavor with a rich, refreshing soda finish.
-            </p>
+            <h3>Litchi</h3>
+            <p>Sweet litchi flavor with a rich, refreshing soda finish.</p>
         </div>
 
     </div>
 </section>
 
-<!-- WHY US -->
+<!-- ================= WHY US ================= -->
 <section id="why" class="section">
     <h2>Why SIPMAN?</h2>
 
     <div class="why-grid">
         <div class="why-card">
-            <img src="" alt="Natural ingredients">
             <h3>Natural Ingredients</h3>
             <p>No artificial nonsense. Just real taste.</p>
         </div>
 
         <div class="why-card">
-            <img src="" alt="Traditional recipe">
             <h3>Traditional Recipe</h3>
             <p>Inspired by classic Indian goli soda.</p>
         </div>
 
         <div class="why-card">
-            <img src="" alt="Refreshing">
             <h3>Ultra Refreshing</h3>
             <p>Perfect fizz for every mood.</p>
         </div>
     </div>
 </section>
 
-<!-- CONTACT -->
+<!-- ================= CONTACT ================= -->
 <section id="contact" class="section gray">
     <h2>Contact Us</h2>
     <p>Email: sipmangolisoda@gmail.com</p>
     <p>Phone: +91 XXXXXXXXXX</p>
 </section>
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 <footer class="footer">
     <p>© 2026 SIPMAN Goli Soda. All Rights Reserved.</p>
 </footer>
 
+<!-- ================= JS ================= -->
 <script src="script.js"></script>
+
+<script>
+function toggleMenu() {
+    document.querySelector('.nav-links').classList.toggle('active');
+}
+
+function scrollToFlavors() {
+    document.getElementById('flavors').scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
-
