@@ -168,23 +168,45 @@ body {
     transform: translateY(-6px);
 }
 
+/* Bigger bottle icons */
 .flavor-icon {
-    width: 110px;
-    height: 110px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    margin: 0 auto 15px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    margin: 0 auto 18px;
+    overflow: visible;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.18);
 }
 
+/* Make bottles dominant */
 .flavor-icon img {
-    width: 80%;
-    height: 80%;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
+    transform: scale(1.1);
 }
+
+/* Hover pop effect */
+.flavor-card:hover .flavor-icon img {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+/* Individual gradients */
+.jeera { background: linear-gradient(135deg, #8B4513, #D2691E); }
+.nimbu { background: linear-gradient(135deg, #FFD700, #FFA500); }
+.shikanji { background: linear-gradient(135deg, #98FB98, #FFD700); }
+.orange { background: linear-gradient(135deg, #FF8C00, #FFA500); }
+.cranberry { background: linear-gradient(135deg, #DC143C, #8B0000); }
+.kalakhatta { background: linear-gradient(135deg, #4B0082, #8B008B); }
+.aam { background: linear-gradient(135deg, #9ACD32, #32CD32); }
+.blueberry { background: linear-gradient(135deg, #4169E1, #1E90FF); }
+.cola { background: linear-gradient(135deg, #2F1810, #4A2C1F); }
+.litchi { background: linear-gradient(135deg, #FFB6C1, #FF69B4); }
+
 
 .flavor-name {
     font-size: 1.2rem;
@@ -299,6 +321,7 @@ body {
         min-width: 220px;
     }
 }
+
 
 
 
