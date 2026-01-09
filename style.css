@@ -527,3 +527,45 @@ body {
     .discover-hero-text h1 {
 
 
+
+/* ===================== FLOATING CONTACT ===================== */
+.floating-contact {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    z-index: 9999;
+}
+
+.contact-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.contact-btn:hover {
+    transform: scale(1.1);
+}
+
+.contact-btn svg {
+    width: 26px;
+    height: 26px;
+    fill: currentColor;
+}
+
+.call-btn {
+    background: #ff5722;
+}
+
+.whatsapp-btn {
+    background: #25D366;
+}
