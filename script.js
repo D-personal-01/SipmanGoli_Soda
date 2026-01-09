@@ -12,3 +12,13 @@ function scrollToFlavors() {
 document.addEventListener("DOMContentLoaded", () => {
     console.log("SIPMAN Goli Soda website loaded successfully");
 });
+
+function openMenu() {
+    document.getElementById("mobileMenu").classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
+function closeMenu() {
+    document.getElementById("mobileMenu").classList.remove("active");
+    document.body.style.overflow = "auto";
+}
