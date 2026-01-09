@@ -14,6 +14,51 @@ body {
     background: #ffffff;
     color: #222;
 }
+.bubble:nth-child(1) {
+    left: 10%;
+    width: 30px;
+    height: 30px;
+    animation-duration: 10s;
+}
+
+.bubble:nth-child(2) {
+    left: 25%;
+    width: 45px;
+    height: 45px;
+    animation-duration: 14s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(3) {
+    left: 45%;
+    width: 20px;
+    height: 20px;
+    animation-duration: 8s;
+    animation-delay: 4s;
+}
+
+.bubble:nth-child(4) {
+    left: 65%;
+    width: 50px;
+    height: 50px;
+    animation-duration: 16s;
+    animation-delay: 1s;
+}
+
+.bubble:nth-child(5) {
+    left: 80%;
+    width: 35px;
+    height: 35px;
+    animation-duration: 11s;
+    animation-delay: 3s;
+}
+
+.bubble:nth-child(6) {
+    left: 90%;
+    width: 25px;
+    height: 25px;
+    animation-duration: 9s;
+}
 
 /* ===================== NAVBAR ===================== */
 .navbar {
@@ -429,3 +474,4 @@ body {
     }
 
     .discover-hero-text h1 {
+
