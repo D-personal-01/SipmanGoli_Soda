@@ -545,3 +545,21 @@ body {
 .facebook-btn {
     background: #1877F2;
 }
+/* ===================== DISCOVER HERO (FORCE APPLY) ===================== */
+.discover-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 70vh;
+
+    padding: 90px 40px;
+    padding-bottom: 180px; /* space for double wave */
+
+    background: linear-gradient(135deg, #e10600, #0033cc);
+    color: #ffffff;
+
+    position: relative;
+    overflow: hidden;
+}
+
