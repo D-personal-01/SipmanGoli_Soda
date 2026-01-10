@@ -592,18 +592,18 @@ body {
     .discover-hero-text h1 {
 
 
-
 /* ===================== FLOATING CONTACT ===================== */
 .floating-contact {
     position: fixed;
+    right: 20px;          /* change to left if needed */
     bottom: 20px;
-    left: 20px;
     display: flex;
     flex-direction: column;
     gap: 14px;
     z-index: 9999;
 }
 
+/* Base button */
 .contact-btn {
     width: 56px;
     height: 56px;
@@ -611,29 +611,45 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
     color: #fff;
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    text-decoration: none;
-    transition: transform 0.2s ease;
+    transition: transform 0.25s ease;
 }
 
+/* Hover effect */
 .contact-btn:hover {
-    transform: scale(1.1);
+    transform: scale(1.12);
 }
 
+/* Icon */
 .contact-btn svg {
     width: 26px;
     height: 26px;
     fill: currentColor;
 }
 
+/* Individual button colors */
 .call-btn {
-    background: #ff5722;
+    background: #000;
 }
 
 .whatsapp-btn {
     background: #25D366;
 }
 
+.instagram-btn {
+    background: linear-gradient(
+        45deg,
+        #f09433,
+        #e6683c,
+        #dc2743,
+        #cc2366,
+        #bc1888
+    );
+}
 
+.facebook-btn {
+    background: #1877F2;
+}
 
