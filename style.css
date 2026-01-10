@@ -494,7 +494,7 @@ body {
 /* ===================== FLOATING CONTACT ===================== */
 .floating-contact {
     position: fixed;
-    right: 20px;
+    left: 20px;
     bottom: 20px;
     display: flex;
     flex-direction: column;
@@ -565,5 +565,6 @@ body {
     position: relative;
     overflow: hidden;
 }
+
 
 
