@@ -488,114 +488,10 @@ body {
     }
 }
 
-/* FLOATING CONTACT BUTTONS */
-.floating-contact {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    z-index: 9999;
-}
-
-.contact-btn {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    text-decoration: none;
-    transition: transform 0.2s ease;
-}
-
-.contact-btn:hover {
-    transform: scale(1.1);
-}
-
-/* Icons */
-.contact-btn svg {
-    width: 26px;
-    height: 26px;
-    fill: currentColor;
-}
-
-/* Individual colors */
-.call-btn {
-    background: #ff5722;
-}
-
-.whatsapp-btn {
-    background: #25D366;
-}
-
-
-/* ===================== DISCOVER PAGE ===================== */
-.discover-hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 90px 40px;
-    background: linear-gradient(135deg, #e10600, #0033cc);
-    color: #fff;
-}
-
-.discover-hero-text h1 {
-    font-size: 48px;
-    margin-bottom: 12px;
-}
-
-.discover-hero-text p {
-    font-size: 1.1rem;
-    max-width: 520px;
-    line-height: 1.6;
-}
-
-.discover-hero-image img {
-    width: 320px;
-}
-
-/* PROCESS SECTION */
-.process-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.process-card {
-    background: #fff;
-    padding: 25px;
-    border-radius: 18px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-}
-
-.process-card h3 {
-    margin-bottom: 10px;
-}
-
-/* CTA */
-.cta-section {
-    text-align: center;
-}
-
-/* ===================== DISCOVER RESPONSIVE ===================== */
-@media (max-width: 768px) {
-    .discover-hero {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .discover-hero-text h1 {
-
-
 /* ===================== FLOATING CONTACT ===================== */
 .floating-contact {
     position: fixed;
-    right: 20px;          /* change to left if needed */
+    right: 20px;
     bottom: 20px;
     display: flex;
     flex-direction: column;
@@ -603,7 +499,6 @@ body {
     z-index: 9999;
 }
 
-/* Base button */
 .contact-btn {
     width: 56px;
     height: 56px;
@@ -617,19 +512,17 @@ body {
     transition: transform 0.25s ease;
 }
 
-/* Hover effect */
 .contact-btn:hover {
     transform: scale(1.12);
 }
 
-/* Icon */
 .contact-btn svg {
     width: 26px;
     height: 26px;
     fill: currentColor;
 }
 
-/* Individual button colors */
+/* Button colors */
 .call-btn {
     background: #000;
 }
@@ -652,4 +545,3 @@ body {
 .facebook-btn {
     background: #1877F2;
 }
-
