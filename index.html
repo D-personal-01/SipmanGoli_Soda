@@ -268,43 +268,54 @@
     <section id="inquiry" class="section inquiry-section">
     <h2>Product Inquiry</h2>
     <p class="section-subtitle">
-        Interested in SIPMAN Goli Soda? Fill in your details and we’ll get back to you.
+        Interested in SIPMAN Goli Soda? Fill in your details and our team will contact you.
     </p>
 
-    <form class="inquiry-form">
+    <form class="inquiry-form"
+          action="https://formsubmit.co/info@sipman.co.in"
+          method="POST">
+
+        <!-- Disable captcha -->
+        <input type="hidden" name="_captcha" value="false">
+
+        <!-- Email subject -->
+        <input type="hidden" name="_subject" value="New SIPMAN Goli Soda Inquiry">
+
+        <!-- Redirect after submit (change URL later if needed) -->
+        <input type="hidden" name="_next" value="https://sipman.co.in/thank-you.html">
 
         <!-- Name -->
         <div class="form-group">
-            <label for="name">Full Name *</label>
-            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            <label>Full Name *</label>
+            <input type="text" name="Name" placeholder="Enter your full name" required>
         </div>
 
         <!-- Address -->
         <div class="form-group">
-            <label for="address">Address *</label>
-            <textarea id="address" name="address" rows="3"
+            <label>Address *</label>
+            <textarea name="Address" rows="3"
                 placeholder="Enter your complete address" required></textarea>
         </div>
 
         <!-- Phone -->
         <div class="form-group">
-            <label for="phone">Phone Number *</label>
-            <input type="tel" id="phone" name="phone"
+            <label>Phone Number *</label>
+            <input type="tel" name="Phone"
                 placeholder="Enter your phone number" required>
         </div>
 
         <!-- Quantity & Flavour -->
         <div class="form-group">
-            <label for="order">Quantity & Flavour *</label>
-            <textarea id="order" name="order" rows="3"
-                placeholder="Example: 10 cartons – Jeera, Orange, Cola" required></textarea>
+            <label>Quantity & Flavour *</label>
+            <textarea name="Order Details" rows="3"
+                placeholder="Example: 10 cartons – Jeera, Nimbu Pani, Cola" required></textarea>
         </div>
 
         <!-- Occupation (Optional) -->
         <div class="form-group">
-            <label for="occupation">Current Occupation (Optional)</label>
-            <input type="text" id="occupation" name="occupation"
-                placeholder="Shop owner, Distributor, Student, etc.">
+            <label>Current Occupation (Optional)</label>
+            <input type="text" name="Occupation"
+                placeholder="Retailer, Distributor, Student, etc.">
         </div>
 
         <!-- Submit -->
@@ -385,19 +396,6 @@ function scrollToFlavors() {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
