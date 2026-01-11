@@ -567,4 +567,132 @@ body {
 }
 
 
+/* ===================== CONTACT WATER ===================== */
+.contact-water {
+    position: relative;
+    background: radial-gradient(circle at center, #2da9ff, #032b5c);
+    padding: 100px 8%;
+    overflow: hidden;
+}
+
+/* Layout */
+.contact-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* FORM */
+.contact-form {
+    width: 45%;
+    color: #fff;
+}
+
+.contact-form h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.contact-form p {
+    margin-bottom: 25px;
+    color: #cfefff;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    border: none;
+    border-radius: 30px;
+    padding: 14px 18px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.contact-form textarea {
+    border-radius: 18px;
+    resize: none;
+    height: 90px;
+}
+
+.contact-form button {
+    margin-top: 10px;
+    align-self: flex-start;
+    background: #e10600;
+    color: #fff;
+    border: none;
+    padding: 14px 36px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.contact-form button:hover {
+    background: #b80000;
+}
+
+/* IMAGE */
+.contact-image img {
+    width: 320px;
+    animation: floatBottle 4s ease-in-out infinite;
+    filter: drop-shadow(0 30px 40px rgba(0,0,0,0.6));
+}
+
+/* FLOAT */
+@keyframes floatBottle {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-18px); }
+}
+
+/* ===================== BUBBLES ===================== */
+.bubbles span {
+    position: absolute;
+    bottom: -80px;
+    width: 14px;
+    height: 14px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 50%;
+    animation: rise 8s infinite ease-in;
+}
+
+.bubbles span:nth-child(1){ left:10%; animation-duration:6s;}
+.bubbles span:nth-child(2){ left:25%; width:20px; height:20px; animation-duration:9s;}
+.bubbles span:nth-child(3){ left:40%; animation-duration:7s;}
+.bubbles span:nth-child(4){ left:60%; width:18px; height:18px; animation-duration:10s;}
+.bubbles span:nth-child(5){ left:80%; animation-duration:8s;}
+
+@keyframes rise {
+    0% { transform: translateY(0); opacity:0; }
+    20% { opacity:0.6; }
+    100% { transform: translateY(-120vh); opacity:0; }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .contact-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+
+    .contact-image img {
+        margin-top: 40px;
+        width: 240px;
+    }
+
+    .contact-form button {
+        align-self: center;
+    }
+}
+
 
