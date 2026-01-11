@@ -265,67 +265,44 @@
 </section>
 <!-- ================= INQUIRY ================= -->
 
-    <section id="inquiry" class="section inquiry-section">
-    <h2>Product Inquiry</h2>
-    <p class="section-subtitle">
-        Interested in SIPMAN Goli Soda? Fill in your details and our team will contact you.
-    </p>
+<section class="contact-water">
 
-    <form class="inquiry-form"
-          action="https://formsubmit.co/info@sipman.co.in"
-          method="POST">
+    <!-- bubbles -->
+    <div class="bubbles">
+        <span></span><span></span><span></span><span></span><span></span>
+    </div>
 
-        <!-- Disable captcha -->
-        <input type="hidden" name="_captcha" value="false">
+    <div class="contact-container">
 
-        <!-- Email subject -->
-        <input type="hidden" name="_subject" value="New SIPMAN Goli Soda Inquiry">
+        <!-- LEFT : FORM -->
+        <div class="contact-form">
+            <h2>Inquiry</h2>
+            <p>Interested in SIPMAN Goli Soda? Send us your details.</p>
 
-        <!-- Redirect after submit (change URL later if needed) -->
-        <input type="hidden" name="_next" value="https://sipman.co.in/thank-you.html">
+            <form action="https://formsubmit.co/info@sipman.co.in" method="POST">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="New SIPMAN Inquiry">
 
-        <!-- Name -->
-        <div class="form-group">
-            <label>Full Name *</label>
-            <input type="text" name="Name" placeholder="Enter your full name" required>
+                <input type="text" name="Name" placeholder="Full Name *" required>
+                <input type="text" name="Address" placeholder="Address *" required>
+                <input type="tel" name="Phone" placeholder="Phone Number *" required>
+
+                <textarea name="Order" placeholder="Quantity & Flavour *" required></textarea>
+
+                <input type="text" name="Occupation" placeholder="Current Occupation (Optional)">
+
+                <button type="submit">SUBMIT NOW</button>
+            </form>
         </div>
 
-        <!-- Address -->
-        <div class="form-group">
-            <label>Address *</label>
-            <textarea name="Address" rows="3"
-                placeholder="Enter your complete address" required></textarea>
+        <!-- RIGHT : BOTTLE -->
+        <div class="contact-image">
+            <img src="images/contact-bottle.png" alt="SIPMAN Goli Soda">
         </div>
 
-        <!-- Phone -->
-        <div class="form-group">
-            <label>Phone Number *</label>
-            <input type="tel" name="Phone"
-                placeholder="Enter your phone number" required>
-        </div>
-
-        <!-- Quantity & Flavour -->
-        <div class="form-group">
-            <label>Quantity & Flavour *</label>
-            <textarea name="Order Details" rows="3"
-                placeholder="Example: 10 cartons – Jeera, Nimbu Pani, Cola" required></textarea>
-        </div>
-
-        <!-- Occupation (Optional) -->
-        <div class="form-group">
-            <label>Current Occupation (Optional)</label>
-            <input type="text" name="Occupation"
-                placeholder="Retailer, Distributor, Student, etc.">
-        </div>
-
-        <!-- Submit -->
-        <button type="submit" class="btn-primary">Submit Inquiry</button>
-
-    </form>
+    </div>
 </section>
 
-
-    
 <!-- ================= CONTACT ================= -->
 <section id="contact" class="section gray">
     <h2>Contact Us</h2>
@@ -396,6 +373,7 @@ function scrollToFlavors() {
 
 </body>
 </html>
+
 
 
 
