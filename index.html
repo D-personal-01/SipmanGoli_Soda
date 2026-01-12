@@ -20,28 +20,36 @@
 
     <!-- Desktop Menu -->
     <nav class="nav-links">
-        <a href="#about"  style="color:black">About</a>
-        <a href="#flavors"  style="color:black">Flavors</a>
-        <a href="#why"  style="color:black">Why Us</a>
-        <a href="#contact"  style="color:black">Contact</a>
-    </nav>
+    <a href="#about">About</a>
+    <a href="#flavors">Flavors</a>
+    <a href="#why">Why Us</a>
+    <a href="#inquiry">Inquiry</a>
+    <a href="#contact">Contact</a>
+</nav>
 </header>
 
 <!-- ================= MOBILE MENU ================= -->
+<!-- Backdrop -->
 <div class="menu-backdrop" onclick="closeMenu()"></div>
 
+<!-- Mobile Menu -->
 <div class="mobile-menu" id="mobileMenu">
-    <div class="mobile-menu-header">
-        <span onclick="closeMenu()">CLOSE ✕</span>
-    </div>
 
+    <!-- Header -->
+    <div class="mobile-menu-header">
+    <span>Menu</span>
+    <span class="menu-x" onclick="closeMenu()">X</span>
+</div>
+
+    <!-- Links -->
     <ul class="mobile-menu-links">
         <li><a href="#home" onclick="closeMenu()">Home</a></li>
         <li><a href="#about" onclick="closeMenu()">About Us</a></li>
         <li><a href="#flavors" onclick="closeMenu()">Flavors</a></li>
-        <li><a href="#contact-water" onclick="closeMenu()">Inquiry</a></li>
+        <li><a href="#inquiry" onclick="closeMenu()">Inquiry</a></li>
         <li><a href="#contact" onclick="closeMenu()">Contact Us</a></li>
     </ul>
+
 </div>
 
 <!-- ================= HERO ================= -->
@@ -268,7 +276,7 @@
 </section>
 <!-- ================= INQUIRY ================= -->
 
-<section class="contact-water">
+<section id="inquiry" class="contact-water">
 
     <!-- bubbles -->
     <div class="bubbles">
@@ -307,10 +315,25 @@
 </section>
 
 <!-- ================= CONTACT ================= -->
-<section id="contact" class="section gray">
-    <h2>Contact Us</h2>
-    <p>Email: info@sipman.co.in</p>
-    <p>Phone: +91 9713632555</p>
+<section id="contact" class="contact-section">
+
+    <!-- Left Image -->
+    <div class="contact-image left">
+        <img src="images/Screenshot 2026-01-12 222931.png" alt="SIPMAN Bottle Left">
+    </div>
+
+    <!-- Center Content -->
+    <div class="contact-content">
+        <h2>Contact Us</h2>
+        <p>Email: <strong>info@sipman.co.in</strong></p>
+        <p>Phone: <strong>+91 9713632555</strong></p>
+    </div>
+
+    <!-- Right Image -->
+    <div class="contact-image right">
+        <img src="images/Screenshot 2026-01-12 222434.png" alt="SIPMAN Bottle Right">
+    </div>
+
 </section>
 
 <!-- ================= FOOTER ================= -->
@@ -358,6 +381,7 @@
 
 </body>
 </html>
+
 
 
 
