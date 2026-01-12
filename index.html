@@ -5,283 +5,165 @@
     <title>SIPMAN Goli Soda</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ================= NAVBAR ================= -->
+<!-- ===================== NAVBAR ===================== -->
 <header class="navbar">
     <div class="logo">
-        <img src="images/Screenshot_2026-01-07_162845-removebg-preview (6).png" alt="Sipman Logo">
+        <img src="images/Screenshot_2026-01-07_162845-removebg-preview (6).png" alt="SIPMAN Logo">
     </div>
 
-    <!-- Hamburger -->
-    <div class="menu-toggle" onclick="openMenu()">☰</div>
-
-    <!-- Desktop Menu -->
     <nav class="nav-links">
-        <a href="#about"  style="color:black">About</a>
-        <a href="#flavors"  style="color:black">Flavors</a>
-        <a href="#why"  style="color:black">Why Us</a>
-        <a href="#contact"  style="color:black">Contact</a>
+        <a href="#about">About</a>
+        <a href="#flavors">Flavors</a>
+        <a href="#why">Why Us</a>
+        <a href="#contact">Contact</a>
     </nav>
+
+    <div class="menu-toggle" onclick="openMenu()">☰</div>
 </header>
 
-<!-- ================= MOBILE MENU ================= -->
+<!-- ===================== MOBILE MENU ===================== -->
 <div class="menu-backdrop" onclick="closeMenu()"></div>
 
 <div class="mobile-menu" id="mobileMenu">
-    <div class="mobile-menu-header">
-        <span onclick="closeMenu()">CLOSE ✕</span>
-    </div>
-
+    <div class="mobile-menu-header" onclick="closeMenu()">CLOSE ✕</div>
     <ul class="mobile-menu-links">
-        <li><a href="#home" onclick="closeMenu()">Home</a></li>
-        <li><a href="#about" onclick="closeMenu()">About Us</a></li>
-        <li><a href="#flavors" onclick="closeMenu()">Flavors</a></li>
-        <li><a href="#franchise" onclick="closeMenu()">Franchise</a></li>
-        <li><a href="#video" onclick="closeMenu()">Video</a></li>
-        <li><a href="#contact" onclick="closeMenu()">Contact Us</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#flavors">Flavors</a></li>
+        <li><a href="#why">Why SIPMAN</a></li>
+        <li><a href="#contact">Contact</a></li>
     </ul>
 </div>
 
-<!-- ================= HERO ================= -->
+<!-- ===================== HERO ===================== -->
 <section class="hero" id="home">
 
-    <!-- BUBBLES BACKGROUND -->
+    <!-- bubbles -->
     <div class="bubbles">
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
+        <div class="bubble" style="left:10%; width:20px; height:20px;"></div>
+        <div class="bubble" style="left:25%; width:35px; height:35px;"></div>
+        <div class="bubble" style="left:40%; width:15px; height:15px;"></div>
+        <div class="bubble" style="left:55%; width:30px; height:30px;"></div>
+        <div class="bubble" style="left:70%; width:25px; height:25px;"></div>
+        <div class="bubble" style="left:85%; width:18px; height:18px;"></div>
     </div>
 
-    <!-- HERO CONTENT -->
     <div class="hero-text">
-    <h1>India’s Iconic Goli Soda<br>Reimagined for a New Generation</h1>
-    <p>Crafted with bold flavors. Designed to refresh.</p>
+        <h1>India’s Iconic Goli Soda<br>Reimagined for a New Generation</h1>
+        <p>Crafted with bold flavors. Designed to refresh.</p>
 
-    <div class="hero-buttons">
-        <button onclick="scrollToFlavors()">Explore Flavors</button>
-        <a href="#contact" class="btn-outline">Make an Inquiry</a>
+        <div class="hero-buttons">
+            <button onclick="scrollToFlavors()">Explore Flavors</button>
+            <a href="#contact" class="btn-outline">Make an Inquiry</a>
+        </div>
     </div>
-</div>
 
     <div class="hero-image">
-        <img src="images/Gemini_Generated_Image_z0uhtzz0uhtzz0uh.png" alt="SIPMAN bottle">
+        <img src="images/Gemini_Generated_Image_z0uhtzz0uhtzz0uh.png" alt="SIPMAN Bottle">
     </div>
 
-    <!-- HERO BOTTOM WAVES -->
+    <!-- waves -->
     <div class="hero-waves">
-
-        <!-- BACK WAVE -->
         <svg class="wave-back" viewBox="0 0 1440 200" preserveAspectRatio="none">
-            <path
-                d="M0,120 
-                   C240,80 480,140 720,100 
-                   960,60 1200,120 1440,90
-                   L1440,200 L0,200 Z"
-                fill="rgba(255,255,255,0.35)">
-            </path>
+            <path d="M0,120 C240,80 480,140 720,100 960,60 1200,120 1440,90 L1440,200 L0,200 Z"
+                  fill="rgba(255,255,255,0.35)"/>
         </svg>
 
-        <!-- FRONT WAVE -->
         <svg class="wave-front" viewBox="0 0 1440 200" preserveAspectRatio="none">
-            <path
-                d="M0,100 
-                   C240,160 480,40 720,90 
-                   960,140 1200,60 1440,100 
-                   L1440,200 L0,200 Z"
-                fill="#ffffff">
-            </path>
+            <path d="M0,100 C240,160 480,40 720,90 960,140 1200,60 1440,100 L1440,200 L0,200 Z"
+                  fill="#ffffff"/>
         </svg>
-
     </div>
 
 </section>
 
-<!-- ================= ABOUT ================= -->
+<!-- ===================== ABOUT ===================== -->
 <section id="about" class="section about-section">
     <h2>About SIPMAN</h2>
-
     <p>
-        SIPMAN was born from a simple belief — soda should never be ordinary. Inspired by the iconic Indian goli soda, we set out to revive a classic with a bold, modern twist.
+        SIPMAN was born from a simple belief — soda should never be ordinary.
+        Inspired by the iconic Indian goli soda, we revived a classic with a bold, modern twist.
     </p>
-
     <p>
-       We’ve worked tirelessly to discover and perfect exotic flavors that excite the palate and stand apart from the usual. Every SIPMAN bottle blends nostalgia, innovation, and attitude, delivering a refreshment that feels both familiar and new.
+        Each bottle blends nostalgia, innovation, and attitude — creating refreshment that feels familiar yet new.
     </p>
-
-    <p>
-       We don’t follow trends — we create flavors that make every sip memorable.
-    </p>
-
     <a href="discover.html" class="btn-primary">Discover More</a>
 </section>
 
-<!-- ================= FLAVORS ================= -->
-
-    
+<!-- ===================== FLAVORS ===================== -->
 <section id="flavors" class="section flavors-section">
-
     <h2 class="section-title">Our Flavors</h2>
-    <p class="section-subtitle">Bold tastes that make every moment memorable</p>
+    <p class="section-subtitle">Bold tastes that make every sip memorable</p>
 
     <div class="flavors-slider">
 
-        <!-- 1. Jeera -->
         <div class="flavor-card">
-            <div class="flavor-icon" style="background: linear-gradient(135deg, #8B4513, #D2691E);">
+            <div class="flavor-icon" style="background:linear-gradient(135deg,#8B4513,#D2691E);">
                 <img src="images/0012-removebg-preview.png" alt="Jeera">
             </div>
-            <h3 class="flavor-name">Jeera</h3>
-            <p class="flavor-description">
-                Traditional cumin-spiced refreshment with an authentic Indian twist.
-            </p>
+            <h3>Jeera</h3>
+            <p>Classic cumin-spiced Indian refreshment.</p>
         </div>
 
-        <!-- 2. Nimbu Pani -->
         <div class="flavor-card">
-            <div class="flavor-icon" style="background: linear-gradient(135deg, #FFD700, #FFA500);">
+            <div class="flavor-icon" style="background:linear-gradient(135deg,#FFD700,#FFA500);">
                 <img src="images/AADI2170__1_-removebg-preview.png" alt="Nimbu Pani">
             </div>
-            <h3 class="flavor-name">Nimbu Pani</h3>
-            <p class="flavor-description">
-                Classic lemon water reimagined with the perfect balance of tang and fizz.
-            </p>
+            <h3>Nimbu Pani</h3>
+            <p>Perfect lemon fizz with refreshing tang.</p>
         </div>
 
-        <!-- 3. Kacha Aam -->
         <div class="flavor-card">
-            <div class="flavor-icon" style="background: linear-gradient(135deg, #9ACD32, #32CD32);">
+            <div class="flavor-icon" style="background:linear-gradient(135deg,#9ACD32,#32CD32);">
                 <img src="images/AADI2172__1_-removebg-preview.png" alt="Kacha Aam">
             </div>
-            <h3 class="flavor-name">Kacha Aam</h3>
-            <p class="flavor-description">
-                Raw mango tanginess that transports you to Indian summer afternoons.
-            </p>
+            <h3>Kacha Aam</h3>
+            <p>Raw mango nostalgia in every sip.</p>
         </div>
 
-        <!-- 4. Orange -->
         <div class="flavor-card">
-            <div class="flavor-icon" style="background: linear-gradient(135deg, #FF8C00, #FFA500);">
-                <img src="images/Polish_20260112_125237240__1_-removebg-preview.png" alt="Orange">
-            </div>
-            <h3 class="flavor-name">Orange</h3>
-            <p class="flavor-description">
-                Bursting with fresh citrus flavor and natural orange essence.
-            </p>
-        </div>
-
-        <!-- 5. Blueberry -->
-        <div class="flavor-card">
-            <div class="flavor-icon" style="background: linear-gradient(135deg, #4169E1, #1E90FF);">
+            <div class="flavor-icon" style="background:linear-gradient(135deg,#4169E1,#1E90FF);">
                 <img src="images/01__1_-removebg-preview.png" alt="Blueberry">
             </div>
-            <h3 class="flavor-name">Blueberry</h3>
-            <p class="flavor-description">
-                Sweet and luscious blueberry flavor with a hint of natural berry essence.
-            </p>
-        </div>
-
-        <!-- 6. Cranberry -->
-        <div class="flavor-card">
-            <div class="flavor-icon" style="background: linear-gradient(135deg, #DC143C, #8B0000);">
-                <img src="images/AADI2164__1_-removebg-preview.png" alt="Cranberry">
-            </div>
-            <h3 class="flavor-name">Cranberry</h3>
-            <p class="flavor-description">
-                Tart and sophisticated berry notes with a smooth, refreshing finish.
-            </p>
-        </div>
-
-        <!-- 7. Nimbu Shikanji -->
-        <div class="flavor-card">
-            <div class="flavor-icon" style="background: linear-gradient(135deg, #98FB98, #FFD700);">
-                <img src="images/AADI2173__1_-removebg-preview.png" alt="Nimbu Shikanji">
-            </div>
-            <h3 class="flavor-name">Nimbu Shikanji</h3>
-            <p class="flavor-description">
-                Sweet and tangy lemonade with a refreshing Indian street-style kick.
-            </p>
-        </div>
-
-        <!-- 8. Litchi -->
-        <div class="flavor-card">
-            <div class="flavor-icon" style="background: linear-gradient(135deg, #FFB6C1, #FF69B4);">
-                <img src="images/AADI2174__1_-removebg-preview.png" alt="Litchi">
-            </div>
-            <h3 class="flavor-name">Litchi</h3>
-            <p class="flavor-description">
-                Exotic litchi sweetness with delicate floral notes and tropical vibes.
-            </p>
-        </div>
-
-        <!-- 9. Cola -->
-        <div class="flavor-card">
-            <div class="flavor-icon" style="background: linear-gradient(135deg, #2F1810, #4A2C1F);">
-                <img src="images/AADI2169__1_-removebg-preview.png" alt="Cola">
-            </div>
-            <h3 class="flavor-name">Cola</h3>
-            <p class="flavor-description">
-                Classic cola taste with our signature bold and refreshing twist.
-            </p>
-        </div>
-
-        <!-- 10. Kala Khatta -->
-        <div class="flavor-card">
-            <div class="flavor-icon" style="background: linear-gradient(135deg, #4B0082, #8B008B);">
-                <img src="images/AADI2166__1_-removebg-preview.png" alt="Kala Khatta">
-            </div>
-            <h3 class="flavor-name">Kala Khatta</h3>
-            <p class="flavor-description">
-                Dark berry fusion with a mysterious and bold flavor profile.
-            </p>
+            <h3>Blueberry</h3>
+            <p>Sweet, smooth and vibrant berry flavor.</p>
         </div>
 
     </div>
 </section>
 
-
-
-<!-- ================= WHY US ================= -->
+<!-- ===================== WHY US ===================== -->
 <section id="why" class="section">
     <h2>Why SIPMAN?</h2>
 
     <div class="why-grid">
         <div class="why-card">
-            <h3>Bold Flavor Identity</h3>
-            <p>Every SIPMAN flavor is crafted to stand out — strong, memorable, and unapologetically bold.</p>
+            <h3>Bold Identity</h3>
+            <p>Strong flavors that stand out.</p>
         </div>
-
         <div class="why-card">
-            <h3>Classic Roots, Modern Twist</h3>
-            <p>Inspired by iconic Indian goli soda, reinvented for today’s generation.</p>
+            <h3>Indian Roots</h3>
+            <p>Classic goli soda with a modern edge.</p>
         </div>
-
         <div class="why-card">
             <h3>Pure Refreshment</h3>
-            <p>Sharp fizz and smooth taste designed to refresh you instantly.</p>
+            <p>Sharp fizz, smooth taste, instant refresh.</p>
         </div>
     </div>
 </section>
-<!-- ================= INQUIRY ================= -->
 
-<section class="contact-water">
-
-    <!-- bubbles -->
-    <div class="bubbles">
-        <span></span><span></span><span></span><span></span><span></span>
-    </div>
-
+<!-- ===================== CONTACT ===================== -->
+<section id="contact" class="contact-water">
     <div class="contact-container">
 
-        <!-- LEFT : FORM -->
         <div class="contact-form">
             <h2>Inquiry</h2>
-            <p>Interested in SIPMAN Goli Soda? Send us your details.</p>
+            <p>Interested in SIPMAN? Send us your details.</p>
 
             <form action="https://formsubmit.co/info@sipman.co.in" method="POST">
                 <input type="hidden" name="_captcha" value="false">
@@ -290,84 +172,26 @@
                 <input type="text" name="Name" placeholder="Full Name *" required>
                 <input type="text" name="Address" placeholder="Address *" required>
                 <input type="tel" name="Phone" placeholder="Phone Number *" required>
-
-                <textarea name="Order" placeholder="Quantity & Flavour *" required></textarea>
-
-                <input type="text" name="Occupation" placeholder="Current Occupation (Optional)">
-
-                <button type="submit">SUBMIT NOW</button>
+                <textarea name="Order" placeholder="Quantity & Flavor *" required></textarea>
+                <input type="text" name="Occupation" placeholder="Occupation (Optional)">
+                <button type="submit">Send Inquiry</button>
             </form>
         </div>
 
-        <!-- RIGHT : BOTTLE -->
         <div class="contact-image">
-            <img src="images/form bg.png" alt="SIPMAN Goli Soda">
+            <img src="images/form bg.png" alt="SIPMAN Bottle">
         </div>
 
     </div>
 </section>
 
-<!-- ================= CONTACT ================= -->
-<section id="contact" class="section gray">
-    <h2>Contact Us</h2>
-    <p>Email: info@sipman.co.in</p>
-    <p>Phone: +91 9713632555</p>
-</section>
-
-<!-- ================= FOOTER ================= -->
+<!-- ===================== FOOTER ===================== -->
 <footer class="footer">
     <p>© 2026 SIPMAN Goli Soda. All Rights Reserved.</p>
 </footer>
 
+<!-- ===================== JS ===================== -->
 <script src="script.js" defer></script>
-    <!-- FLOATING CONTACT BUTTONS -->
-<div class="floating-contact">
-
-    <!-- Call -->
-    <a href="tel:+919713632555" class="contact-btn call-btn" aria-label="Call">
-        <svg viewBox="0 0 24 24">
-            <path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.59l2.2-2.21c.28-.26.36-.65.25-1C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/>
-        </svg>
-    </a>
-
-    <!-- WhatsApp -->
-    <a href="https://wa.me/919713632555" target="_blank" class="contact-btn whatsapp-btn" aria-label="WhatsApp">
-        <svg viewBox="0 0 24 24">
-            <path d="M12 2a10 10 0 0 0-8.94 14.5L2 22l5.7-1.5A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.08-1.12l-.3-.18-3.38.89.9-3.3-.2-.33A8 8 0 1 1 12 20zm4.42-5.3c-.24-.12-1.44-.71-1.66-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.18-1.41-1.32-1.65-.14-.24-.02-.37.1-.49.1-.1.24-.26.36-.39.12-.13.16-.22.24-.37.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.48-.4-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.33.98 2.49c.12.16 1.7 2.6 4.12 3.64.58.25 1.03.4 1.38.51.58.18 1.1.15 1.52.09.46-.07 1.44-.59 1.64-1.16.2-.57.2-1.05.14-1.16-.06-.11-.22-.18-.46-.3z"/>
-        </svg>
-    </a>
-
-    <!-- Instagram -->
-    <a href="https://www.instagram.com/sipmangolisoda?igsh=MWY5ZW5idTEwcGMw"
-       target="_blank" class="contact-btn instagram-btn" aria-label="Instagram">
-        <svg viewBox="0 0 24 24">
-            <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3h10zm-5 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm4.75-.5a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5z"/>
-        </svg>
-    </a>
-
-    <!-- Facebook -->
-    <a href="https://www.facebook.com/profile.php?id=61585696865194"
-       target="_blank" class="contact-btn facebook-btn" aria-label="Facebook">
-        <svg viewBox="0 0 24 24">
-            <path d="M22 12a10 10 0 1 0-11.5 9.87v-6.99H8.08V12h2.42V9.8c0-2.39 1.42-3.7 3.6-3.7 1.04 0 2.12.18 2.12.18v2.34h-1.19c-1.17 0-1.53.73-1.53 1.48V12h2.6l-.42 2.88h-2.18v6.99A10 10 0 0 0 22 12z"/>
-        </svg>
-    </a>
-
-</div>
-
-
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
