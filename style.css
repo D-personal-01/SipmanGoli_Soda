@@ -101,7 +101,7 @@ body {
 /* Hamburger */
 .menu-toggle {
     font-size: 28px;
-    color: #fff;
+    color: #000;
     cursor: pointer;
     display: none;
 }
@@ -712,5 +712,6 @@ body {
         align-self: center;
     }
 }
+
 
 
