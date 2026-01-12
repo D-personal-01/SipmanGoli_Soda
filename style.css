@@ -496,6 +496,70 @@ body {
 .gray {
     background: #f6f6f6;
 }
+/* ===================== TRUST BADGES ===================== */
+
+/* ===================== TRUST SECTION ===================== */
+.trust-section {
+    padding: 80px 6%;
+    background: #f7f9fc;
+    text-align: center;
+}
+
+.trust-section h2 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+}
+
+.trust-subtitle {
+    color: #555;
+    margin-bottom: 40px;
+    font-size: 1.05rem;
+}
+
+/* Grid */
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 30px;
+    align-items: center;
+}
+
+/* Individual badge */
+.trust-item {
+    background: #fff;
+    border-radius: 18px;
+    padding: 22px 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trust-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 35px rgba(0,0,0,0.12);
+}
+
+/* Badge image */
+.trust-item img {
+    max-width: 90px;
+    max-height: 90px;
+    margin-bottom: 12px;
+}
+
+/* Label */
+.trust-item span {
+    display: block;
+    font-weight: 600;
+    color: #222;
+    font-size: 0.95rem;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .trust-item img {
+        max-width: 70px;
+    }
+}
+
 
 /* ===================== BUTTON ===================== */
 .btn-primary {
@@ -926,6 +990,7 @@ body {
         align-self: center;
     }
 }
+
 
 
 
