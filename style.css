@@ -106,15 +106,30 @@ body {
     display: none;
 }
 
+.nav-links a[href="#inquiry"] {
+  color: #e10600;
+  font-weight: 600;
+}
+
 /* ===================== MOBILE POPUP MENU ===================== */
+/* ===================== BACKDROP ===================== */
 .menu-backdrop {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(3px);
     z-index: 9998;
-    display: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
 }
 
+.menu-backdrop.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ===================== MOBILE MENU ===================== */
 .mobile-menu {
     position: fixed;
     top: 0;
@@ -122,45 +137,189 @@ body {
     width: 85%;
     max-width: 340px;
     height: 100vh;
-    background: #2f2f7f;
+    background: linear-gradient(180deg, #1c1c5a, #2f2f7f);
     z-index: 9999;
-    transition: left 0.35s ease;
+    transition: left 0.35s cubic-bezier(.4,0,.2,1);
     overflow-y: auto;
+    box-shadow: 8px 0 30px rgba(0,0,0,0.4);
 }
 
+/* Active */
 .mobile-menu.active {
     left: 0;
 }
 
-.menu-backdrop.active {
-    display: block;
-}
-
+/* ===================== HEADER ===================== */
 .mobile-menu-header {
-    background: #9db300;
-    padding: 18px;
-    text-align: center;
-    font-weight: bold;
+    background: linear-gradient(135deg, #e10600, #9b0000);
+    padding: 20px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     color: #fff;
-    cursor: pointer;
 }
 
+/* Title */
+.mobile-menu-header span {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Simple X */
+.menu-x {
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.menu-x:hover {
+    opacity: 0.85;
+}
+
+/* ===================== LINKS ===================== */
 .mobile-menu-links {
     list-style: none;
-    padding: 30px 20px;
+    padding: 25px 20px;
 }
 
 .mobile-menu-links li {
-    border-bottom: 1px dashed rgba(255,255,255,0.35);
+    margin-bottom: 8px;
 }
 
 .mobile-menu-links a {
-    display: block;
-    padding: 16px 6px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 1.05rem;
+    border-radius: 12px;
+    transition: background 0.25s ease, transform 0.2s ease;
 }
+
+/* Hover / tap effect */
+.mobile-menu-links a:hover {
+    background: rgba(255,255,255,0.12);
+    transform: translateX(4px);
+}
+
+/* ===================== ACTIVE LINK ===================== */
+.mobile-menu-links a.active {
+    background: rgba(255,255,255,0.18);
+    font-weight: 600;
+}
+
+/* ===================== SAFE SCROLL OFFSET ===================== */
+#inquiry {
+    scroll-margin-top: 90px;
+}
+
+/* ===================== BACKDROP ===================== */
+.menu-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(3px);
+    z-index: 9998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.menu-backdrop.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ===================== MOBILE MENU ===================== */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 85%;
+    max-width: 340px;
+    height: 100vh;
+    background: linear-gradient(180deg, #1c1c5a, #2f2f7f);
+    z-index: 9999;
+    transition: left 0.35s cubic-bezier(.4,0,.2,1);
+    overflow-y: auto;
+    box-shadow: 8px 0 30px rgba(0,0,0,0.4);
+}
+
+/* Active */
+.mobile-menu.active {
+    left: 0;
+}
+
+/* ===================== HEADER ===================== */
+.mobile-menu-header {
+    background: linear-gradient(135deg, #e10600, #9b0000);
+    padding: 20px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+}
+
+/* Title */
+.mobile-menu-header span {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Close button */
+.mobile-menu-close {
+    font-size: 1.8rem;
+    cursor: pointer;
+    line-height: 1;
+    opacity: 0.9;
+}
+
+.mobile-menu-close:hover {
+    opacity: 1;
+}
+
+/* ===================== LINKS ===================== */
+.mobile-menu-links {
+    list-style: none;
+    padding: 25px 20px;
+}
+
+.mobile-menu-links li {
+    margin-bottom: 8px;
+}
+
+.mobile-menu-links a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.05rem;
+    border-radius: 12px;
+    transition: background 0.25s ease, transform 0.2s ease;
+}
+
+/* Hover / tap effect */
+.mobile-menu-links a:hover {
+    background: rgba(255,255,255,0.12);
+    transform: translateX(4px);
+}
+
+/* ===================== ACTIVE LINK ===================== */
+.mobile-menu-links a.active {
+    background: rgba(255,255,255,0.18);
+    font-weight: 600;
+}
+
+/* ===================== SAFE SCROLL OFFSET ===================== */
+#inquiry {
+    scroll-margin-top: 90px;
+}
+
 
 /* ===================== HERO ===================== */
 .hero {
@@ -669,6 +828,61 @@ body {
     50% { transform: translateY(-18px); }
 }
 
+/* ===================== CONTACT WITH IMAGES ===================== */
+.contact-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 90px 6%;
+    background: #fff;
+    position: relative;
+}
+
+/* Center text */
+.contact-content {
+    text-align: center;
+    max-width: 500px;
+}
+
+.contact-content h2 {
+    font-size: 2.6rem;
+    margin-bottom: 16px;
+}
+
+.contact-content p {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+/* Side images */
+.contact-image img {
+    width: 220px;
+    opacity: 0.95;
+}
+
+/* Slight floating effect */
+.contact-image img {
+    animation: floatBottle 4s ease-in-out infinite;
+}
+
+@keyframes floatBottle {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 900px) {
+    .contact-section {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .contact-image img {
+        width: 180px;
+    }
+}
+
 /* ===================== BUBBLES ===================== */
 .bubbles span {
     position: absolute;
@@ -712,6 +926,7 @@ body {
         align-self: center;
     }
 }
+
 
 
 
