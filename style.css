@@ -210,6 +210,51 @@ body {
     width: 300px;
 }
 
+.hero-text h1 {
+    font-size: 52px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 18px;
+    margin-top: 28px;
+}
+
+/* Outline button */
+.btn-outline {
+    padding: 12px 28px;
+    border-radius: 25px;
+    border: 2px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* Mobile UX */
+@media (max-width: 768px) {
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-text h1 {
+        font-size: 36px;
+    }
+}
+
 /* ===================== HERO BUBBLES ===================== */
 .bubbles {
     position: absolute;
@@ -250,7 +295,6 @@ body {
     }
 }
 
-/* Make sure hero content stays above bubbles */
 .hero {
     position: relative;
 }
@@ -315,6 +359,9 @@ body {
     }
 }
 
+.hero-image img {
+    animation: floatBottle 5s ease-in-out infinite;
+}
 
 /* ===================== SECTIONS ===================== */
 .section {
@@ -694,5 +741,6 @@ body {
         align-self: center;
     }
 }
+
 
 
