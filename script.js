@@ -1,36 +1,56 @@
+/* ===================== GLOBAL SELECTORS ===================== */
+const body = document.body;
+const mobileMenu = document.getElementById("mobileMenu");
+const backdrop = document.querySelector(".menu-backdrop");
+
 /* ===================== MOBILE MENU ===================== */
 function openMenu() {
-    const menu = document.getElementById("mobileMenu");
-    const backdrop = document.querySelector(".menu-backdrop");
+    if (!mobileMenu || !backdrop) return;
 
-    if (!menu || !backdrop) return;
-
-    menu.classList.add("active");
+    mobileMenu.classList.add("active");
     backdrop.classList.add("active");
-    document.body.style.overflow = "hidden";
+
+    // Lock background scroll
+    body.style.overflow = "hidden";
 }
 
 function closeMenu() {
-    const menu = document.getElementById("mobileMenu");
-    const backdrop = document.querySelector(".menu-backdrop");
+    if (!mobileMenu || !backdrop) return;
 
-    if (!menu || !backdrop) return;
-
-    menu.classList.remove("active");
+    mobileMenu.classList.remove("active");
     backdrop.classList.remove("active");
-    document.body.style.overflow = "auto";
+
+    // Restore scroll
+    body.style.overflow = "auto";
 }
+
+/* ===================== CLOSE MENU ON LINK CLICK ===================== */
+document.querySelectorAll(".mobile-menu-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        closeMenu();
+    });
+});
 
 /* ===================== SMOOTH SCROLL ===================== */
 function scrollToFlavors() {
-    const flavors = document.getElementById("flavors");
-    if (!flavors) return;
+    const flavorsSection = document.getElementById("flavors");
+    if (!flavorsSection) return;
 
-    flavors.scrollIntoView({ behavior: "smooth", block: "start" });
+    flavorsSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 }
 
-/* ===================== SAFETY INIT ===================== */
+/* ===================== ESC KEY CLOSE MENU ===================== */
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && mobileMenu.classList.contains("active")) {
+        closeMenu();
+    }
+});
+
+/* ===================== SAFETY ON LOAD ===================== */
 document.addEventListener("DOMContentLoaded", () => {
-    // Ensure menu is closed on load
+    // Ensure menu is always closed on refresh
     closeMenu();
 });
