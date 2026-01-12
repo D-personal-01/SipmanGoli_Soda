@@ -496,7 +496,7 @@ body {
 .gray {
     background: #f6f6f6;
 }
-/* ===================== TRUST BADGES ===================== */
+
 
 /* ===================== TRUST SECTION ===================== */
 .trust-section {
@@ -521,16 +521,21 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 30px;
-    align-items: center;
+    align-items: stretch;
 }
 
-/* Individual badge */
+/* FRAME */
 .trust-item {
     background: #fff;
     border-radius: 18px;
-    padding: 22px 18px;
+    padding: 20px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 220px; /* 🔒 fixed frame height */
 }
 
 .trust-item:hover {
@@ -538,28 +543,34 @@ body {
     box-shadow: 0 14px 35px rgba(0,0,0,0.12);
 }
 
-/* Badge image */
+/* IMAGE FRAME */
 .trust-item img {
-    max-width: 90px;
-    max-height: 90px;
-    margin-bottom: 12px;
+    width: 100%;
+    max-width: 110px;
+    max-height: 110px;
+    object-fit: contain; /* 🔑 IMPORTANT */
+    margin-bottom: 14px;
 }
 
 /* Label */
 .trust-item span {
-    display: block;
     font-weight: 600;
     color: #222;
     font-size: 0.95rem;
+    text-align: center;
 }
 
 /* Mobile */
 @media (max-width: 600px) {
+    .trust-item {
+        height: 200px;
+    }
+
     .trust-item img {
-        max-width: 70px;
+        max-width: 90px;
+        max-height: 90px;
     }
 }
-
 
 /* ===================== BUTTON ===================== */
 .btn-primary {
@@ -990,6 +1001,7 @@ body {
         align-self: center;
     }
 }
+
 
 
 
