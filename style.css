@@ -66,35 +66,32 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 48px;
+    padding: 18px 40px;
     background: #ffffff;          
     box-shadow: 0 4px 16px rgba(0,0,0,0.08);
     position: sticky;
     top: 0;
     z-index: 1000;
-    transition: box-shadow 0.3s ease;
 }
 
 
-@media (max-width: 768px) {
-    .logo img {
-        height: 60px;
-    }
+.logo img {
+    height: 75px;
+    width: auto;
+    display: block;
 }
-
 
 /* Desktop Nav */
-.nav-links a {
-    color: #111;
-    margin-left: 26px;
-    text-decoration: none;
-    font-weight: 500;
-    position: relative;
-    transition: color 0.25s ease;
+.nav-links {
+    display: flex;
 }
 
-.nav-links a:hover {
-    color: #e10600;
+.nav-links a {
+    color: #fff;
+    margin-left: 22px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
 }
 
 .nav-links a:hover {
@@ -104,25 +101,11 @@ body {
 /* Hamburger */
 .menu-toggle {
     font-size: 28px;
-    color: #111;
+    color: #fff;
     cursor: pointer;
     display: none;
 }
 
-.nav-links a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 0;
-    height: 2px;
-    background: #e10600;
-    transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-}
 /* ===================== MOBILE POPUP MENU ===================== */
 .menu-backdrop {
     position: fixed;
@@ -158,8 +141,7 @@ body {
     padding: 18px;
     text-align: center;
     font-weight: bold;
-    font-size: 1.1rem;
-    letter-spacing: 0.5px;
+    color: #fff;
     cursor: pointer;
 }
 
@@ -228,51 +210,6 @@ body {
     width: 300px;
 }
 
-.hero-text h1 {
-    font-size: 52px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-}
-
-.hero-text p {
-    font-size: 1.1rem;
-    opacity: 0.9;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 18px;
-    margin-top: 28px;
-}
-
-/* Outline button */
-.btn-outline {
-    padding: 12px 28px;
-    border-radius: 25px;
-    border: 2px solid #fff;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-.btn-outline:hover {
-    background: #fff;
-    color: #000;
-}
-
-/* Mobile UX */
-@media (max-width: 768px) {
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hero-text h1 {
-        font-size: 36px;
-    }
-}
-
 /* ===================== HERO BUBBLES ===================== */
 .bubbles {
     position: absolute;
@@ -313,6 +250,7 @@ body {
     }
 }
 
+/* Make sure hero content stays above bubbles */
 .hero {
     position: relative;
 }
@@ -377,9 +315,6 @@ body {
     }
 }
 
-.hero-image img {
-    animation: floatBottle 5s ease-in-out infinite;
-}
 
 /* ===================== SECTIONS ===================== */
 .section {
@@ -418,6 +353,24 @@ body {
 
 .btn-primary:hover {
     background: #b80000;
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 30px;
+    border: 2px solid #ffffff;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-weight: bold;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background: #ffffff;
+    color: #000000 !important;
+    text-decoration: none;
 }
 
 /* ===================== ABOUT ===================== */
@@ -497,41 +450,6 @@ body {
 .blueberry { background: linear-gradient(135deg, #4169E1, #1E90FF); }
 .cola { background: linear-gradient(135deg, #2F1810, #4A2C1F); }
 .litchi { background: linear-gradient(135deg, #FFB6C1, #FF69B4); }
-
-.flavor-popup {
-    position: absolute;
-    bottom: -12px;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    background: #111;
-    color: #fff;
-    padding: 12px 18px;
-    border-radius: 14px;
-    font-size: 0.85rem;
-    text-align: center;
-    width: max-content;
-    max-width: 220px;
-
-    opacity: 0;
-    pointer-events: none;
-
-    transition: opacity 0.35s ease, transform 0.35s ease;
-}
-
-.flavor-popup strong {
-    display: block;
-    font-size: 0.7rem;
-    letter-spacing: 0.6px;
-    opacity: 0.7;
-    margin-bottom: 4px;
-}
-
-@media (max-width: 768px) {
-    .flavor-popup {
-        display: none;
-    }
-}
-
 
 /* ===================== WHY US ===================== */
 .why-grid {
@@ -794,8 +712,5 @@ body {
         align-self: center;
     }
 }
-
-
-
 
 
