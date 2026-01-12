@@ -26,3 +26,29 @@ function closeMenu() {
     backdrop.classList.remove("active");
     document.body.style.overflow = "auto";
 }
+
+/* ===================== FLAVOR POPUP (PREMIUM DELAY) ===================== */
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".flavor-card").forEach(card => {
+        let timer;
+
+        card.addEventListener("mouseenter", () => {
+            timer = setTimeout(() => {
+                const popup = card.querySelector(".flavor-popup");
+                if (!popup) return;
+
+                popup.style.opacity = "1";
+                popup.style.transform = "translateX(-50%) translateY(-6px)";
+            }, 600); // premium delay
+        });
+
+        card.addEventListener("mouseleave", () => {
+            clearTimeout(timer);
+            const popup = card.querySelector(".flavor-popup");
+            if (!popup) return;
+
+            popup.style.opacity = "0";
+            popup.style.transform = "translateX(-50%) translateY(10px)";
+        });
+    });
+});
