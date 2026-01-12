@@ -498,6 +498,41 @@ body {
 .cola { background: linear-gradient(135deg, #2F1810, #4A2C1F); }
 .litchi { background: linear-gradient(135deg, #FFB6C1, #FF69B4); }
 
+.flavor-popup {
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: #111;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 14px;
+    font-size: 0.85rem;
+    text-align: center;
+    width: max-content;
+    max-width: 220px;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.flavor-popup strong {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 0.6px;
+    opacity: 0.7;
+    margin-bottom: 4px;
+}
+
+@media (max-width: 768px) {
+    .flavor-popup {
+        display: none;
+    }
+}
+
+
 /* ===================== WHY US ===================== */
 .why-grid {
     display: grid;
@@ -759,6 +794,7 @@ body {
         align-self: center;
     }
 }
+
 
 
 
