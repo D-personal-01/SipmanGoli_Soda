@@ -66,32 +66,35 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 40px;
+    padding: 20px 48px;
     background: #ffffff;          
     box-shadow: 0 4px 16px rgba(0,0,0,0.08);
     position: sticky;
     top: 0;
     z-index: 1000;
+    transition: box-shadow 0.3s ease;
 }
 
 
-.logo img {
-    height: 75px;
-    width: auto;
-    display: block;
+@media (max-width: 768px) {
+    .logo img {
+        height: 60px;
+    }
 }
+
 
 /* Desktop Nav */
-.nav-links {
-    display: flex;
-}
-
 .nav-links a {
-    color: #fff;
-    margin-left: 22px;
+    color: #111;
+    margin-left: 26px;
     text-decoration: none;
     font-weight: 500;
-    transition: opacity 0.2s ease;
+    position: relative;
+    transition: color 0.25s ease;
+}
+
+.nav-links a:hover {
+    color: #e10600;
 }
 
 .nav-links a:hover {
@@ -101,11 +104,25 @@ body {
 /* Hamburger */
 .menu-toggle {
     font-size: 28px;
-    color: #fff;
+    color: #111;
     cursor: pointer;
     display: none;
 }
 
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #e10600;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
 /* ===================== MOBILE POPUP MENU ===================== */
 .menu-backdrop {
     position: fixed;
@@ -141,7 +158,8 @@ body {
     padding: 18px;
     text-align: center;
     font-weight: bold;
-    color: #fff;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
     cursor: pointer;
 }
 
@@ -741,6 +759,7 @@ body {
         align-self: center;
     }
 }
+
 
 
 
