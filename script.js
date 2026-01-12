@@ -18,8 +18,9 @@ function closeMenu() {
 
     menu.classList.remove("active");
     backdrop.classList.remove("active");
-    document.body.style.overflow = "auto";
+    document.body.style.overflow = "";
 }
+
 
 /* ===================== SMOOTH SCROLL ===================== */
 function scrollToFlavors() {
@@ -34,3 +35,4 @@ document.addEventListener("DOMContentLoaded", () => {
     // Ensure menu is closed on load
     closeMenu();
 });
+
