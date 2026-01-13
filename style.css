@@ -128,7 +128,7 @@ body {
     width: 85%;
     max-width: 340px;
     height: 100vh;
-    background: #2f2f7f;
+  background: linear-gradient(180deg, #1c1c5a, #2f2f7f);
     z-index: 9999;
     transition: left 0.35s ease;
     overflow-y: auto;
@@ -143,7 +143,7 @@ body {
 }
 
 .mobile-menu-header {
-    background: #9db300;
+    background: #e10600;
     padding: 18px;
     text-align: center;
     font-weight: bold;
@@ -167,6 +167,22 @@ body {
     text-decoration: none;
     font-size: 18px;
 }
+
+@media (max-width: 900px) {
+    .nav-links {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+.menu-x {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 /* ===================== BACKDROP ===================== */
 .menu-backdrop {
     position: fixed;
@@ -1056,6 +1072,7 @@ body {
         align-self: center;
     }
 }
+
 
 
 
