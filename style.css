@@ -87,7 +87,7 @@ body {
 }
 
 .nav-links a {
-    color: #fff;
+    color: #000;
     margin-left: 22px;
     text-decoration: none;
     font-weight: 500;
@@ -1001,6 +1001,7 @@ body {
         align-self: center;
     }
 }
+
 
 
 
