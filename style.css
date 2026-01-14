@@ -111,14 +111,22 @@ body {
   font-weight: 600;
 }
 
-/* ===================== MOBILE POPUP MENU ===================== */
+/* ===================== MOBILE MENU ===================== */
 
 .menu-backdrop {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(3px);
     z-index: 9998;
-    display: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.menu-backdrop.active {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .mobile-menu {
@@ -128,46 +136,53 @@ body {
     width: 85%;
     max-width: 340px;
     height: 100vh;
-  background: linear-gradient(180deg, #1c1c5a, #2f2f7f);
+    background: linear-gradient(180deg, #1c1c5a, #2f2f7f);
     z-index: 9999;
-    transition: left 0.35s ease;
+    transition: left 0.35s cubic-bezier(.4,0,.2,1);
     overflow-y: auto;
+    box-shadow: 8px 0 30px rgba(0,0,0,0.4);
 }
 
 .mobile-menu.active {
     left: 0;
 }
 
-.menu-backdrop.active {
-    display: block;
+.mobile-menu-header {
+    background: linear-gradient(135deg, #e10600, #9b0000);
+    padding: 20px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
 }
 
-.mobile-menu-header {
-    background: #e10600;
-    padding: 18px;
-    text-align: center;
+.menu-x {
+    font-size: 1.4rem;
     font-weight: bold;
-    color: #fff;
     cursor: pointer;
 }
 
 .mobile-menu-links {
     list-style: none;
-    padding: 30px 20px;
-}
-
-.mobile-menu-links li {
-    border-bottom: 1px dashed rgba(255,255,255,0.35);
+    padding: 25px 20px;
 }
 
 .mobile-menu-links a {
     display: block;
-    padding: 16px 6px;
+    padding: 14px 16px;
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 1.05rem;
+    border-radius: 12px;
+    transition: background 0.25s ease, transform 0.2s ease;
 }
 
+.mobile-menu-links a:hover {
+    background: rgba(255,255,255,0.12);
+    transform: translateX(4px);
+}
+
+/* ===================== MOBILE VISIBILITY ===================== */
 @media (max-width: 900px) {
     .nav-links {
         display: none;
@@ -176,11 +191,6 @@ body {
     .menu-toggle {
         display: block;
     }
-}
-.menu-x {
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
 }
 
 /* ===================== BACKDROP ===================== */
@@ -200,25 +210,7 @@ body {
     pointer-events: auto;
 }
 
-/* ===================== MOBILE MENU ===================== */
-.mobile-menu {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 85%;
-    max-width: 340px;
-    height: 100vh;
-    background: linear-gradient(180deg, #1c1c5a, #2f2f7f);
-    z-index: 9999;
-    transition: left 0.35s cubic-bezier(.4,0,.2,1);
-    overflow-y: auto;
-    box-shadow: 8px 0 30px rgba(0,0,0,0.4);
-}
 
-/* Active */
-.mobile-menu.active {
-    left: 0;
-}
 
 /* ===================== HEADER ===================== */
 .mobile-menu-header {
@@ -1072,6 +1064,7 @@ body {
         align-self: center;
     }
 }
+
 
 
 
