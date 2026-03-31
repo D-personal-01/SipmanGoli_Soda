@@ -10,39 +10,6 @@ html {
     scroll-behavior: smooth;
 }
 
-.loader {
-  width: 35px;
-  height: 80px;
-  position: relative;
-}
-
-.loader:after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  padding: 3px 5px;
-  border-top: 1px solid #bbb6aa;
-  border-bottom: 4px solid #bbb6aa;
-  background: linear-gradient(#612329 0 0) bottom no-repeat content-box, #e4e0d7;
-  mix-blend-mode: darken;
-  animation: l1 1.5s infinite linear;
-}
-
-.loader:before {
-  content: "";
-  position: absolute;
-  inset: -18px calc(50% - 2px) 8px;
-  background: #eb6b3e;
-  transform-origin: bottom;
-  transform: rotate(8deg);
-}
-
-@keyframes l1 {
-  0% {background-size: 100% 100%}
-  50% {background-size: 100% 5%}
-  100% {background-size: 100% 100%}
-}
-
 body {
     background: #ffffff;
     color: #222;
@@ -416,26 +383,25 @@ body {
     scroll-margin-top: 90px;
 }
 
-
 /* ===================== HERO ===================== */
 .hero {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 90px 40px;
-    padding-bottom: 180px; /* space for wave */
+    padding: 90px 40px 180px;
+    min-height: 100vh;
     background: linear-gradient(135deg, #e10600, #b80000);
     color: #fff;
-    position: relative;   /* required for waves & bubbles */
-    overflow: hidden;     /* keeps waves clean */
+    position: relative;
+    overflow: hidden;
 }
 
-@media (max-width: 768px) {
-    .hero {
-        padding-bottom: 140px;
-    }
+/* ===================== HERO CONTENT ===================== */
+.hero-text,
+.hero-image {
+    position: relative;
+    z-index: 4;
 }
-
 
 .hero-text h1 {
     font-size: 48px;
@@ -449,16 +415,12 @@ body {
 
 .hero-text button {
     padding: 12px 28px;
-    border: none;
     border-radius: 25px;
+    border: none;
     background: #000;
     color: #fff;
-    cursor: pointer;
     font-weight: bold;
-}
-
-.hero-text button:hover {
-    background: #222;
+    cursor: pointer;
 }
 
 .hero-image img {
@@ -470,64 +432,32 @@ body {
     position: absolute;
     inset: 0;
     overflow: hidden;
-    z-index: 1;
+    z-index: 2;
+    pointer-events: none;
 }
 
 .bubble {
     position: absolute;
-    bottom: -100px;
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.25);
+    bottom: -80px;
+    background: rgba(255,255,255,0.35);
     border-radius: 50%;
-    animation: rise 10s infinite ease-in;
+    animation: rise linear infinite;
 }
 
-/* Different sizes & positions */
-.bubble:nth-child(1) { left: 10%; width: 20px; height: 20px; animation-duration: 8s; }
-.bubble:nth-child(2) { left: 25%; width: 35px; height: 35px; animation-duration: 12s; }
-.bubble:nth-child(3) { left: 40%; width: 15px; height: 15px; animation-duration: 7s; }
-.bubble:nth-child(4) { left: 55%; width: 30px; height: 30px; animation-duration: 10s; }
-.bubble:nth-child(5) { left: 70%; width: 25px; height: 25px; animation-duration: 9s; }
-.bubble:nth-child(6) { left: 85%; width: 18px; height: 18px; animation-duration: 11s; }
+.bubble:nth-child(1){left:10%; width:14px; height:14px; animation-duration:7s;}
+.bubble:nth-child(2){left:25%; width:28px; height:28px; animation-duration:11s;}
+.bubble:nth-child(3){left:40%; width:12px; height:12px; animation-duration:6s;}
+.bubble:nth-child(4){left:55%; width:22px; height:22px; animation-duration:9s;}
+.bubble:nth-child(5){left:70%; width:18px; height:18px; animation-duration:8s;}
+.bubble:nth-child(6){left:85%; width:16px; height:16px; animation-duration:10s;}
 
 @keyframes rise {
-    0% {
-        transform: translateY(0);
-        opacity: 0;
-    }
-    10% {
-        opacity: 0.6;
-    }
-    100% {
-        transform: translateY(-120vh);
-        opacity: 0;
-    }
+    0% { transform: translateY(0); opacity: 0; }
+    15% { opacity: 0.6; }
+    100% { transform: translateY(-120vh); opacity: 0; }
 }
 
-/* Make sure hero content stays above bubbles */
-.hero {
-    position: relative;
-}
-
-.hero-text,
-.hero-image {
-    position: relative;
-    z-index: 2;
-}
-/* ===================== HERO WAVE ===================== */
-.hero {
-    position: relative;
-    overflow: hidden;
-}
-
-/* ===================== HERO DOUBLE WAVES ===================== */
-.hero {
-    position: relative;
-    overflow: hidden;
-}
-
-/* Container */
+/* ===================== HERO WAVES ===================== */
 .hero-waves {
     position: absolute;
     bottom: 0;
@@ -537,39 +467,36 @@ body {
     z-index: 3;
 }
 
-/* Both waves */
 .hero-waves svg {
     position: absolute;
     width: 100%;
     height: 180px;
-    display: block;
 }
 
-/* Back wave */
-.wave-back {
-    bottom: 28px;
-}
+.wave-back { bottom: 28px; }
+.wave-front { bottom: 0; }
 
-/* Front wave */
-.wave-front {
-    bottom: 0;
-}
-
-/* Keep content above waves */
-.hero-text,
-.hero-image,
-.bubbles {
-    position: relative;
-    z-index: 4;
-}
-
-/* Mobile tuning */
+/* ===================== MOBILE ===================== */
 @media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 140px;
+    }
+
+    .hero-text h1 {
+        font-size: 36px;
+    }
+
+    .hero-image img {
+        margin-top: 30px;
+        width: 260px;
+    }
+
     .hero-waves svg {
         height: 140px;
     }
 }
-
 
 /* ===================== SECTIONS ===================== */
 .section {
@@ -1097,7 +1024,6 @@ body {
         align-self: center;
     }
 }
-
 
 
 
